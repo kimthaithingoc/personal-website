@@ -1,0 +1,15 @@
+{
+  "Home": {
+    "title": "Hello world!",
+    "about": "Go to the about page"
+  },
+  "LocaleSwitcher": {
+    "locale": "{locale, select, en {English} vi {Việt Nam} cn {汉语} other {Unknown}}"
+  },
+  "ThemeProvider": {
+    "ModeToggle": {
+      "mode": "{mode, select, light {Light} dark {Dark} system {System} other {Unknown}}",
+      "toggleTheme": "Toggle Theme"
+    }
+  }
+}

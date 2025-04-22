@@ -1,0 +1,15 @@
+{
+  "Home": {
+    "title": "你好!",
+    "about": "Go to the about page"
+  },
+  "LocaleSwitcher": {
+    "locale": "{locale, select, en {English} vi {Việt Nam} cn {汉语} other {未知}}"
+  },
+  "ThemeProvider": {
+    "ModeToggle": {
+      "mode": "{mode, select, light {浅色} dark {深色} system {系统} other {未知}}",
+      "toggleTheme": "切换主题"
+    }
+  }
+}
