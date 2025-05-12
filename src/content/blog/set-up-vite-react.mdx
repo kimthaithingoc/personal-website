@@ -1,0 +1,315 @@
+export const metadata = {
+  title: "🚀 React + Vite Boilerplate Setup Guide",
+  publishDate: "2024-05-01T07:00:00Z",
+  description:
+    "Learn how to set up a modern React boilerplate using Vite, TypeScript, ESLint, Prettier, Vitest, React Testing Library, React Router, and advanced Git tools like Husky, Lint-Staged, and Commitlint. This step-by-step guide helps you create a scalable and high-performance React project from scratch.",
+  thumbnail: "/images/posts/set-up-vite-react.png",
+  category: "Technology",
+};
+
+🚀 React + Vite Boilerplate Setup Guide
+
+Includes: **Vite + React + TypeScript + ESLint + Prettier + Vitest + React Testing Library + React Router + Husky + Lint-Staged + Commitlint**
+
+---
+
+## 1. Initialize React Project with Vite
+
+```bash
+npm create vite@latest
+
+```
+
+- **Project name:** `vite-react`
+- **Framework:** `React`
+- **Variant:** `TypeScript + SWC`
+
+Then run:
+
+```bash
+cd vite-react
+npm install
+npm run dev
+
+```
+
+👉 **Clean up**: Remove unnecessary files like `App.css`, the logo SVG from `assets`, and the contents of `index.css`.
+
+---
+
+## 2. Configure ESLint
+
+📘 [ESLint Getting Started](https://eslint.org/docs/latest/use/getting-started#quick-start)
+
+Run the ESLint init command:
+
+```bash
+npm init @eslint/config@latest
+
+```
+
+Select the following options:
+
+- Language: `JavaScript`
+- Style: `problems`
+- Modules: `ESM`
+- Framework: `React`
+- Use TypeScript: `Yes`
+- Environment: `Browser`
+
+Accept all suggested dependencies and install with `npm`.
+
+### Add to `eslint.config.js`:
+
+```
+{
+  files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
+  languageOptions: { globals: globals.browser },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
+}
+
+```
+
+---
+
+## 3. Setup Prettier
+
+📘 [Prettier + ESLint Integration](https://github.com/prettier/eslint-plugin-prettier)
+
+Install:
+
+```bash
+npm install --save-dev eslint-plugin-prettier eslint-config-prettier
+npm install --save-dev --save-exact prettier
+
+```
+
+Create `.prettierrc`:
+
+```json
+{
+  "singleQuote": true,
+  "semi": false,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "printWidth": 100
+}
+```
+
+Create `.prettierignore`:
+
+```
+node_modules
+dist
+build
+*.min.js
+
+```
+
+### Update `eslint.config.js`:
+
+Make sure to add `eslint-plugin-prettier/recommended` as the last item in the config array:
+
+```
+export default defineConfig([
+  {
+    files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
+    plugins: { js },
+    extends: ['js/recommended'],
+  },
+  {
+    files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
+    languageOptions: { globals: globals.browser },
+    settings: { react: { version: 'detect' } },
+  },
+  tseslint.configs.recommended,
+  pluginReact.configs.flat.recommended,
+  eslintPluginPrettierRecommended, // Must be last
+])
+
+```
+
+---
+
+## 4. Useful Scripts in `package.json`
+
+```json
+"scripts": {
+  "dev": "vite",
+  "build": "tsc -b && vite build",
+  "preview": "vite preview",
+  "lint": "eslint .",
+  "lint:fix": "eslint . --fix",
+  "format": "prettier --write .",
+  "format:check": "prettier --check ."
+}
+
+```
+
+---
+
+## 5. Husky, Lint-Staged, and Commitlint
+
+### Setup Husky
+
+📘 [Husky Docs](https://github.com/typicode/husky/blob/main/docs/get-started.md)
+
+```bash
+npm install --save-dev husky
+npx husky init
+
+```
+
+### Install Lint-Staged
+
+📘 [Lint-Staged Docs](https://github.com/lint-staged/lint-staged)
+
+```bash
+npm install --save-dev lint-staged
+
+```
+
+Add to `package.json`:
+
+```json
+"lint-staged": {
+  "**/*.{js,ts,jsx,tsx}": [
+    "eslint --fix",
+    "prettier --write"
+  ]
+}
+
+```
+
+### Install Commitlint
+
+📘 [Commitlint Docs](https://commitlint.js.org/)
+
+```bash
+npm install --save-dev @commitlint/config-conventional @commitlint/cli
+
+```
+
+Create `commitlint.config.js`:
+
+```
+const Configuration = {
+  extends: ['@commitlint/config-conventional'],
+  helpUrl: 'https://github.com/conventional-changelog/commitlint/#what-is-commitlint',
+}
+
+export default Configuration
+
+```
+
+### Husky Hooks
+
+**`.husky/commit-msg`**:
+
+```bash
+#!/usr/bin/env sh
+. "$(dirname "$0")/_/husky.sh"
+
+npx --no-install commitlint --edit "$1"
+
+```
+
+**`.husky/pre-commit`**:
+
+```bash
+#!/usr/bin/env sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "🔍 Running lint-staged..."
+npx lint-staged
+echo "✅ Pre-commit checks passed!"
+
+npm run test
+
+if [ $? -ne 0 ]; then
+  echo "❌ Tests failed! Commit aborted."
+  exit 1
+fi
+
+echo "✅ All checks passed. Proceeding to commit."
+
+```
+
+---
+
+## 6. Configure Vitest
+
+📘 [Vitest Docs](https://vitest.dev/)
+
+```bash
+npm install -D vitest @vitest/coverage-v8
+
+```
+
+Create `vitest.config.ts`:
+
+```
+import { defineConfig } from 'vitest/config'
+
+export default defineConfig({
+  test: {
+    coverage: {
+      include: ['src/**/*.{ts,tsx,js,jsx}'],
+      exclude: ['**/*.test.*', '**/__tests__/**'],
+      reporter: ['text', 'html'],
+    },
+  },
+})
+
+```
+
+Update `package.json`:
+
+```json
+"scripts": {
+  "test": "vitest",
+  "coverage": "vitest run --coverage"
+}
+
+```
+
+Update ESLint config to ignore `coverage/`:
+
+```
+export default defineConfig([
+  { ignores: ['coverage/**'] },
+  ...
+])
+
+```
+
+---
+
+## 7. ESLint Tips
+
+To **disable a rule inline**, use:
+
+```
+// eslint-disable-next-line no-console
+console.log('Debug message')
+
+```
+
+Or globally in `eslint.config.js`:
+
+```
+rules: {
+  'no-console': 0
+}
+
+```
+
+---
+
+## ✅ You're All Set!
+
+You now have a clean, modern, and fully configured React + TypeScript environment — ready for professional development. Just start coding 😎

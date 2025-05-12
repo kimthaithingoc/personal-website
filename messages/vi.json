@@ -4,12 +4,19 @@
     "about": "Go to the about page"
   },
   "LocaleSwitcher": {
-    "locale": "{locale, select, en {English} vi {Việt Nam} cn {汉语} other {Không rõ}}"
+    "locale": "{locale, select, en {English} vi {Việt Nam} zh {汉语} other {Không rõ}}"
   },
   "ThemeProvider": {
     "ModeToggle": {
       "mode": "{mode, select, light {Sáng} dark {Tối} system {Hệ thống} other {Không rõ}}",
       "toggleTheme": "Chuyển đổi giao diện"
+    }
+  },
+  "Error": {
+    "title": "Rất tiếc! Đã xảy ra lỗi!",
+    "button": {
+      "tryAgain": "Thử lại",
+      "goHome": "Về trang chủ"
     }
   }
 }

@@ -1,0 +1,35 @@
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+exports.__esModule = true;
+var github_1 = require("./github");
+__createBinding(exports, github_1, "default", "Github");
+var email_1 = require("./email");
+__createBinding(exports, email_1, "default", "Email");
+var instagram_1 = require("./instagram");
+__createBinding(exports, instagram_1, "default", "Instagram");
+var linkedin_1 = require("./linkedin");
+__createBinding(exports, linkedin_1, "default", "Linkedin");
+var x_1 = require("./x");
+__createBinding(exports, x_1, "default", "X");
+var react_1 = require("./react");
+__createBinding(exports, react_1, "default", "React");
+var next_1 = require("./next");
+__createBinding(exports, next_1, "default", "Next");
+var html_1 = require("./html");
+__createBinding(exports, html_1, "default", "HTML5");
+var typescript_1 = require("./typescript");
+__createBinding(exports, typescript_1, "default", "TypeScript");
+var shadcnui_1 = require("./shadcnui");
+__createBinding(exports, shadcnui_1, "default", "ShadcnUI");
+var tailwindcss_1 = require("./tailwindcss");
+__createBinding(exports, tailwindcss_1, "default", "TailwindCSS");
+var bootstrap_1 = require("./bootstrap");
+__createBinding(exports, bootstrap_1, "default", "Bootstrap");
+var figma_1 = require("./figma");
+__createBinding(exports, figma_1, "default", "Figma");

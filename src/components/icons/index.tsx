@@ -1,0 +1,13 @@
+export { default as Github } from "./github";
+export { default as Email } from "./email";
+export { default as Instagram } from "./instagram";
+export { default as Linkedin } from "./linkedin";
+export { default as X } from "./x";
+export { default as React } from "./react";
+export { default as Next } from "./next";
+export { default as HTML5 } from "./html";
+export { default as TypeScript } from "./typescript";
+export { default as ShadcnUI } from "./shadcnui";
+export { default as TailwindCSS } from "./tailwindcss";
+export { default as Bootstrap } from "./bootstrap";
+export { default as Figma } from "./figma";
