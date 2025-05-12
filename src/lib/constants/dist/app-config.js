@@ -2,8 +2,8 @@
 exports.__esModule = true;
 exports.SOCIAL_LINKS = exports.APP_CONFIG = void 0;
 exports.APP_CONFIG = {
-    SITE_NAME: "My Portfolio",
-    SITE_DESCRIPTION: "Personal portfolio and blog",
+    SITE_NAME: "My Website",
+    SITE_DESCRIPTION: "Personal website",
     AUTHOR: "config.myName",
     DEFAULT_LOCALE: "en",
     SUPPORTED_LOCALES: ["vi", "en", "zh"],
