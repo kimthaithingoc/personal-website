@@ -17,7 +17,7 @@ This is a personal website built with [Next.js](https://nextjs.org/) and TypeScr
 
 ```bash
 # Clone the repo
-git clone https://github.com/kimthaithingoc/personal-website.git
+git clone https://github.com/ngockim109/personal-website.git
 cd personal-website
 
 # Install dependencies
