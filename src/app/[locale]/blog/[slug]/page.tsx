@@ -4,7 +4,7 @@ import { IPost } from "@/types/post";
 import { Metadata } from "next";
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;

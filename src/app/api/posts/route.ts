@@ -1,8 +1,9 @@
 import { getPostPagination } from "@/lib/utils/post";
+import { IPaginationParams } from "@/types";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
-  const body = await request.json();
+  const body = (await request.json()) as IPaginationParams;
   const { filters, fields, page, limit, sort, order, search } = body;
   try {
     const paginatedPost = await getPostPagination({
@@ -16,6 +17,10 @@ export async function POST(request: NextRequest) {
     });
     return NextResponse.json(paginatedPost, { status: 200 });
   } catch (error) {
-    return NextResponse.json(error, { status: 500 });
+    console.error("Error fetching posts:", error);
+    return NextResponse.json(
+      { message: "Internal server error" },
+      { status: 500 }
+    );
   }
 }
