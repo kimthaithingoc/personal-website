@@ -11,3 +11,6 @@ export { default as ShadcnUI } from "./shadcnui";
 export { default as TailwindCSS } from "./tailwindcss";
 export { default as Bootstrap } from "./bootstrap";
 export { default as Figma } from "./figma";
+export { default as Jira } from "./jira";
+export { default as AntDesign } from "./antdesign";
+export { default as Express } from "./express";

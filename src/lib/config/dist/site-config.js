@@ -5,7 +5,7 @@ var constants_1 = require("../constants");
 exports.siteConfig = {
     name: process.env.NEXT_PUBLIC_SITE_NAME || constants_1.APP_CONFIG.SITE_NAME,
     description: process.env.NEXT_PUBLIC_SITE_DESCRIPTION || constants_1.APP_CONFIG.SITE_DESCRIPTION,
-    url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000/",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
     ogImage: process.env.NEXT_PUBLIC_OG_IMAGE || "/images/og-image.jpg",
     links: {
         email: constants_1.SOCIAL_LINKS.EMAIL,
@@ -18,5 +18,22 @@ exports.siteConfig = {
         email: constants_1.APP_CONFIG.CONTACT_EMAIL
     },
     isDevelopment: process.env.NODE_ENV === "development",
-    isProduction: process.env.NODE_ENV === "production"
+    isProduction: process.env.NODE_ENV === "production",
+    endpoints: {
+        blog: {
+            list: "" + process.env.NEXT_PUBLIC_SITE_URL + constants_1.ROUTES.BLOG,
+            detail: function (slug) {
+                return "" + process.env.NEXT_PUBLIC_SITE_URL + constants_1.ROUTES.BLOG + "/" + slug;
+            }
+        },
+        portfolio: {
+            list: "" + process.env.NEXT_PUBLIC_SITE_URL + constants_1.ROUTES.PORTFOLIO,
+            detail: function (id) {
+                return "" + process.env.NEXT_PUBLIC_SITE_URL + constants_1.ROUTES.PORTFOLIO + "/" + id;
+            }
+        },
+        landing: {
+            home: "" + process.env.NEXT_PUBLIC_SITE_URL + constants_1.ROUTES.HOME
+        }
+    }
 };

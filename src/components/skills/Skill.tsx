@@ -6,13 +6,18 @@ import SkillCard from "./SkillCard";
 const Skill = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const skills = [
+    "TypeScript",
+    "HTML5",
     "React",
     "Next",
-    "TypeScript",
+    "Express",
     "ShadcnUI",
-    "TailwindCSS",
     "Bootstrap",
-    "HTML5",
+    "AntDesign",
+    "TailwindCSS",
+    "Github",
+    "Jira",
+    "Figma",
   ];
 
   return (

@@ -1,15 +1,17 @@
 export const metadata = {
   title: "🚀 React + Vite Boilerplate Setup Guide",
-  publishDate: "2024-05-01T07:00:00Z",
+  publishDate: "2025-05-01T07:00:00Z",
   description:
     "Learn how to set up a modern React boilerplate using Vite, TypeScript, ESLint, Prettier, Vitest, React Testing Library, React Router, and advanced Git tools like Husky, Lint-Staged, and Commitlint. This step-by-step guide helps you create a scalable and high-performance React project from scratch.",
   thumbnail: "/images/posts/set-up-vite-react.png",
   category: "Technology",
 };
 
-🚀 React + Vite Boilerplate Setup Guide
+# 🚀 React + Vite Boilerplate Setup Guide
 
 Includes: **Vite + React + TypeScript + ESLint + Prettier + Vitest + React Testing Library + React Router + Husky + Lint-Staged + Commitlint**
+
+Github: [Clone the repository](https://github.com/ngockim109/vite-react)
 
 ---
 
@@ -39,7 +41,7 @@ npm run dev
 
 ## 2. Configure ESLint
 
-📘 [ESLint Getting Started](https://eslint.org/docs/latest/use/getting-started#quick-start)
+[📘 ESLint Getting Started](https://eslint.org/docs/latest/use/getting-started#quick-start)
 
 Run the ESLint init command:
 
@@ -61,7 +63,7 @@ Accept all suggested dependencies and install with `npm`.
 
 ### Add to `eslint.config.js`:
 
-```
+```js
 {
   files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
   languageOptions: { globals: globals.browser },
@@ -78,7 +80,7 @@ Accept all suggested dependencies and install with `npm`.
 
 ## 3. Setup Prettier
 
-📘 [Prettier + ESLint Integration](https://github.com/prettier/eslint-plugin-prettier)
+[📘 Prettier + ESLint Integration](https://github.com/prettier/eslint-plugin-prettier)
 
 Install:
 
@@ -102,7 +104,7 @@ Create `.prettierrc`:
 
 Create `.prettierignore`:
 
-```
+```text
 node_modules
 dist
 build
@@ -114,23 +116,22 @@ build
 
 Make sure to add `eslint-plugin-prettier/recommended` as the last item in the config array:
 
-```
+```js
 export default defineConfig([
   {
-    files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     plugins: { js },
-    extends: ['js/recommended'],
+    extends: ["js/recommended"],
   },
   {
-    files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     languageOptions: { globals: globals.browser },
-    settings: { react: { version: 'detect' } },
+    settings: { react: { version: "detect" } },
   },
   tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
   eslintPluginPrettierRecommended, // Must be last
-])
-
+]);
 ```
 
 ---
@@ -156,7 +157,7 @@ export default defineConfig([
 
 ### Setup Husky
 
-📘 [Husky Docs](https://github.com/typicode/husky/blob/main/docs/get-started.md)
+[📘 Husky Docs](https://github.com/typicode/husky/blob/main/docs/get-started.md)
 
 ```bash
 npm install --save-dev husky
@@ -166,7 +167,7 @@ npx husky init
 
 ### Install Lint-Staged
 
-📘 [Lint-Staged Docs](https://github.com/lint-staged/lint-staged)
+[📘 Lint-Staged Docs](https://github.com/lint-staged/lint-staged)
 
 ```bash
 npm install --save-dev lint-staged
@@ -187,7 +188,7 @@ Add to `package.json`:
 
 ### Install Commitlint
 
-📘 [Commitlint Docs](https://commitlint.js.org/)
+[📘 Commitlint Docs](https://commitlint.js.org/)
 
 ```bash
 npm install --save-dev @commitlint/config-conventional @commitlint/cli
@@ -196,14 +197,14 @@ npm install --save-dev @commitlint/config-conventional @commitlint/cli
 
 Create `commitlint.config.js`:
 
-```
+```js
 const Configuration = {
-  extends: ['@commitlint/config-conventional'],
-  helpUrl: 'https://github.com/conventional-changelog/commitlint/#what-is-commitlint',
-}
+  extends: ["@commitlint/config-conventional"],
+  helpUrl:
+    "https://github.com/conventional-changelog/commitlint/#what-is-commitlint",
+};
 
-export default Configuration
-
+export default Configuration;
 ```
 
 ### Husky Hooks
@@ -243,7 +244,7 @@ echo "✅ All checks passed. Proceeding to commit."
 
 ## 6. Configure Vitest
 
-📘 [Vitest Docs](https://vitest.dev/)
+[📘 Vitest Docs](https://vitest.dev/)
 
 ```bash
 npm install -D vitest @vitest/coverage-v8
@@ -252,19 +253,18 @@ npm install -D vitest @vitest/coverage-v8
 
 Create `vitest.config.ts`:
 
-```
-import { defineConfig } from 'vitest/config'
+```tsx
+import { defineConfig } from "vitest/config";
 
 export default defineConfig({
   test: {
     coverage: {
-      include: ['src/**/*.{ts,tsx,js,jsx}'],
-      exclude: ['**/*.test.*', '**/__tests__/**'],
-      reporter: ['text', 'html'],
+      include: ["src/**/*.{ts,tsx,js,jsx}"],
+      exclude: ["**/*.test.*", "**/__tests__/**"],
+      reporter: ["text", "html"],
     },
   },
-})
-
+});
 ```
 
 Update `package.json`:
@@ -279,7 +279,7 @@ Update `package.json`:
 
 Update ESLint config to ignore `coverage/`:
 
-```
+```tsx
 export default defineConfig([
   { ignores: ['coverage/**'] },
   ...
@@ -293,15 +293,14 @@ export default defineConfig([
 
 To **disable a rule inline**, use:
 
-```
+```tsx
 // eslint-disable-next-line no-console
-console.log('Debug message')
-
+console.log("Debug message");
 ```
 
 Or globally in `eslint.config.js`:
 
-```
+```js
 rules: {
   'no-console': 0
 }

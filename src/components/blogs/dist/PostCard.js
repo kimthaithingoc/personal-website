@@ -50,6 +50,6 @@ var PostCard = function (_a) {
                         }
                     })),
                     react_1["default"].createElement("h3", { className: "font-bold" }, post.title),
-                    react_1["default"].createElement("p", { className: "text-gray-600 dark:text-gray-400 text-justify sm:text-sm text-xs line-clamp-3 overflow-ellipsis" }, post.description))))));
+                    react_1["default"].createElement("p", { className: utils_1.cn("text-gray-600 dark:text-gray-400 text-justify sm:text-sm text-xs overflow-ellipsis", orientation === "vertical" ? "line-clamp-3" : "line-clamp-6") }, post.description))))));
 };
 exports["default"] = PostCard;

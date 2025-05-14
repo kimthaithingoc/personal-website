@@ -53,6 +53,18 @@ export interface SiteConfig {
   };
   isDevelopment: boolean;
   isProduction: boolean;
+  endpoints: {
+    blog: IEndpointList;
+    portfolio: IEndpointList;
+    landing: {
+      home: string;
+    };
+  };
+}
+
+export interface IEndpointList {
+  list: string;
+  detail: (id: string) => string;
 }
 
 export interface SocialLink {

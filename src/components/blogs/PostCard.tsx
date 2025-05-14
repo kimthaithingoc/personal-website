@@ -104,7 +104,12 @@ const PostCard = ({
 
             <h3 className="font-bold">{post.title}</h3>
 
-            <p className="text-gray-600 dark:text-gray-400 text-justify sm:text-sm text-xs line-clamp-3 overflow-ellipsis">
+            <p
+              className={cn(
+                "text-gray-600 dark:text-gray-400 text-justify sm:text-sm text-xs overflow-ellipsis",
+                orientation === "vertical" ? "line-clamp-3" : "line-clamp-6"
+              )}
+            >
               {post.description}
             </p>
           </div>
