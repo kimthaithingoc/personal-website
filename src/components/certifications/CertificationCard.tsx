@@ -54,9 +54,9 @@ const CertificationCard = ({
         transition: `opacity 0.5s ease, transform 0.5s ease ${index * 0.1}s`,
       }}
     >
-      <div>
+      <div className="border border-primary/40 rounded-md">
         {/* Images */}
-        <div className="relative h-36 overflow-hidden sm:h-52 rounded-md ">
+        <div className="relative h-36 overflow-hidden sm:h-52 rounded-md">
           <Image
             src={certification.image}
             alt={certification.name}

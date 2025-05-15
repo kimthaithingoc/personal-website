@@ -55,6 +55,6 @@ export const certifications: ICertification[] = [
     date: "2022-01-20",
     image: "/images/certifications/MC CERTIFICATE - FES CAMP.png",
     credentialUrl:
-      "https://drive.google.com/file/d/1JcbLw06oPXnnGuqwRGYO4RoMdJ53o5Tb/view?usp=sharing",
+      "https://drive.google.com/file/d/1kgKnLdgvv7rvTUyRxsJ9Dh3mxbj9yDP_/view?usp=sharing",
   },
 ];

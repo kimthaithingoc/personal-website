@@ -13,7 +13,7 @@ const ProjectOverview = ({ project }: ProjectDetailProps) => {
         className="w-full aspect-video"
         controls
         preload="none"
-        poster={project.images[0]}
+        poster={project.videoThumbnail}
       >
         <source src={project.videoDemo} type="video/mp4" />
         {/* <track

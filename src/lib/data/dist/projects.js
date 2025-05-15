@@ -7,11 +7,22 @@ exports.projects = [
         id: "allure",
         code: "allure",
         images: [
-            "/images/portfolio/sample.jpg",
-            "/images/portfolio/sample.jpg",
-            "/images/portfolio/sample.jpg",
-            "/images/portfolio/sample.jpg",
-            "/images/portfolio/sample.jpg",
+            "/images/portfolio/project/allure/1.png",
+            "/images/portfolio/project/allure/2.png",
+            "/images/portfolio/project/allure/3.png",
+            "/images/portfolio/project/allure/4.png",
+            "/images/portfolio/project/allure/5.png",
+            "/images/portfolio/project/allure/6.png",
+            "/images/portfolio/project/allure/8.png",
+            "/images/portfolio/project/allure/10.png",
+            "/images/portfolio/project/allure/11.png",
+            "/images/portfolio/project/allure/12.png",
+            "/images/portfolio/project/allure/13.png",
+            "/images/portfolio/project/allure/14.png",
+            "/images/portfolio/project/allure/15.png",
+            "/images/portfolio/project/allure/16.png",
+            "/images/portfolio/project/allure/17.png",
+            "/images/portfolio/project/allure/18.png",
         ],
         techStack: [
             {
@@ -36,7 +47,7 @@ exports.projects = [
             },
             {
                 category: enum_1.TechStackCategory.DevOps,
-                tech: [enum_1.DevOpsTech.Vercel]
+                tech: [enum_1.DevOpsTech.Netlify]
             },
             {
                 category: enum_1.TechStackCategory.Others,
@@ -44,19 +55,26 @@ exports.projects = [
             },
         ],
         metrics: {
-            users: [{ platform: "Mobile", count: 23 }]
+            users: [{ platform: enum_1.ProjectPlatform.MobileApp, count: 5 }]
         },
         platform: [enum_1.ProjectPlatform.WebApp, enum_1.ProjectPlatform.MobileApp],
         category: [enum_1.ProjectCategory.eCommerce],
         resources: [
-            { type: enum_1.ResourceType.Demo, url: "https://artzy-demo.com" },
-            { type: enum_1.ResourceType.Github, url: "https://artzy-demo.com" },
-            { type: enum_1.ResourceType.Document, url: "https://artzy-demo.com" },
-            { type: enum_1.ResourceType.Figma, url: "https://artzy-demo.com" },
+            { type: enum_1.ResourceType.Demo, url: "https://allure-e.netlify.app/" },
+            { type: enum_1.ResourceType.Github, url: "https://github.com/HaHasTeam/" },
+            {
+                type: enum_1.ResourceType.Document,
+                url: "https://drive.google.com/drive/folders/14cnpA3YqPVsqmK7mMd3KAYmYvCvC3GAL?usp=sharing"
+            },
+            {
+                type: enum_1.ResourceType.Figma,
+                url: "https://www.figma.com/design/LjKyVNBGdRK5JRsSqz21QZ/Untitled?node-id=0-1&t=zEsGnllQNrWY47KZ-1"
+            },
         ],
-        videoDemo: "/images/portfolio/demo-sample.mp4",
+        videoDemo: "/images/portfolio/project/allure/Demo.mp4",
+        videoThumbnail: "/images/portfolio/project/allure/Demo-Cover.jpg",
         startTime: "2024-10-06",
-        endTime: "2025-04-23",
+        endTime: "2025-05-08",
         contribution: {
             percentage: 35,
             role: [enum_1.Role.FrontendDeveloper, enum_1.Role.UIUXDesigner]
@@ -64,9 +82,6 @@ exports.projects = [
         team: [
             { role: enum_1.Role.FrontendDeveloper, members: 3 },
             { role: enum_1.Role.BackendDeveloper, members: 2 },
-            { role: enum_1.Role.AIEngineer, members: 2 },
-            { role: enum_1.Role.BusinessAnalyst, members: 2 },
-            { role: enum_1.Role.Contributor, members: 2 },
         ],
         title: "Allure",
         summary: "Allure is an e-commerce platform for authentic beauty products, connecting customers with official brands, KOL livestreams, and professional beauty consultants.",
@@ -77,7 +92,7 @@ exports.projects = [
             "Top #1 contributor on GitHub for the Customer Website, Management Dashboard, and Customer Mobile App repositories.",
             "Developed 70% of the core e-commerce frontend flows, including robust handling for edge cases (e.g., out-of-stock products, inactive listings, invalid cart actions), significantly improving reliability and user experience.",
             "Implemented 85% of the features in the Customer Mobile App using React Native.",
-            "Led UI/UX design during the initial sprint, creating Figma designs that accelerated frontend development by 30%.",
+            "Designed 90% of screens and components in Figma, accelerating frontend development by 30%.",
             "Designed technical documentation including Swimlane Diagrams and Screen Flows for better cross-functional collaboration.",
             "Created test plans and executed manual testing on core e-commerce functionalities to ensure seamless user experience and bug-free release cycles.",
         ],

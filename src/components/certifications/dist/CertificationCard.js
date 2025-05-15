@@ -31,8 +31,8 @@ var CertificationCard = function (_a) {
             transform: isVisible ? "translateY(0)" : "translateY(20px)",
             transition: "opacity 0.5s ease, transform 0.5s ease " + index * 0.1 + "s"
         } },
-        react_1["default"].createElement("div", null,
-            react_1["default"].createElement("div", { className: "relative h-36 overflow-hidden sm:h-52 rounded-md " },
+        react_1["default"].createElement("div", { className: "border border-primary/40 rounded-md" },
+            react_1["default"].createElement("div", { className: "relative h-36 overflow-hidden sm:h-52 rounded-md" },
                 react_1["default"].createElement(image_1["default"], { src: certification.image, alt: certification.name, fill: true, className: "object-cover rounded-md transition-transform duration-500 group-hover:scale-105" }),
                 react_1["default"].createElement("div", { className: "absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" }),
                 react_1["default"].createElement("div", { className: "absolute bottom-0 left-0 right-0 flex items-end gap-2 p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100" },

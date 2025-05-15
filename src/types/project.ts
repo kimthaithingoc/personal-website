@@ -16,6 +16,7 @@ import { IIdentifiable } from "./identifiable";
 export interface IProjectCore extends IIdentifiable {
   images: string[];
   videoDemo?: string;
+  videoThumbnail?: string;
   techStack: ITechStack[];
   platform: ProjectPlatform[];
   category: ProjectCategory[];
@@ -78,7 +79,7 @@ export interface ITechStack {
 }
 
 export interface IUserMetric {
-  platform: string;
+  platform: ProjectPlatform;
   count: number;
 }
 
