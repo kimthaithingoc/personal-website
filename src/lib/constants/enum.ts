@@ -28,6 +28,7 @@ export enum FrontendTech {
   ReactJs = "ReactJS",
   AntDesign = "Ant Design",
   SaSS = "SaSS",
+  ScSS = "ScSS",
   Vue = "Vue",
   Angular = "Angular",
   Svelte = "Svelte",
@@ -73,6 +74,7 @@ export enum DatabaseTech {
   Supabase = "Supabase",
   Redis = "Redis",
   Oracle = "Oracle",
+  SQLServer = "SQLServer",
 }
 
 export enum DevOpsTech {
@@ -118,6 +120,7 @@ export enum Role {
   SoftwareArchitect = "Software Architect",
   Intern = "Intern",
   Contributor = "Contributor",
+  Marketing = "Marketing",
 }
 
 export enum UrlType {

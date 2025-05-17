@@ -65,9 +65,6 @@ export const projects: IProject[] = [
         tech: [OtherTech.Figma, OtherTech.Postman, OtherTech.GitHub],
       },
     ],
-    metrics: {
-      users: [{ platform: ProjectPlatform.MobileApp, count: 5 }],
-    },
     platform: [ProjectPlatform.WebApp, ProjectPlatform.MobileApp],
     category: [ProjectCategory.eCommerce],
     resources: [
@@ -124,6 +121,238 @@ export const projects: IProject[] = [
     futurePlans: [
       "Integrate real-time shipping tracking with third-party logistics providers.",
       "Implement AI-based product recommendations and consultation matching.",
+    ],
+  },
+  {
+    id: "fams",
+    code: "fams",
+    images: ["/images/portfolio/project/fams/1.png"],
+    techStack: [
+      {
+        category: TechStackCategory.Frontend,
+        tech: [
+          FrontendTech.ReactJs,
+          FrontendTech.Typescript,
+          FrontendTech.AntDesign,
+          FrontendTech.ScSS,
+        ],
+      },
+      {
+        category: TechStackCategory.Backend,
+        tech: [BackendTech.ASPNet],
+      },
+
+      {
+        category: TechStackCategory.Database,
+        tech: [DatabaseTech.SQLServer],
+      },
+      {
+        category: TechStackCategory.Others,
+        tech: [OtherTech.Figma, OtherTech.Postman, OtherTech.GitHub],
+      },
+    ],
+    platform: [ProjectPlatform.WebApp],
+    category: [ProjectCategory.InternalTool],
+    resources: [
+      { type: ResourceType.Github, url: "https://github.com/ngockim109/fams" },
+      {
+        type: ResourceType.Document,
+        url: "https://drive.google.com/drive/folders/1ZbFRJq9cDW0_sQOVn35aGzi-epHJLir9?usp=sharing",
+      },
+    ],
+    // videoDemo: "/images/portfolio/project/fams/Demo.mp4",
+    videoThumbnail: "/images/portfolio/project/fams/Demo-Cover.jpg",
+    startTime: "2024-01-01",
+    endTime: "2025-05-17",
+    contribution: {
+      percentage: 50,
+      role: [Role.TeamLead, Role.FrontendDeveloper],
+    },
+    team: [
+      { role: Role.FrontendDeveloper, members: 8 },
+      { role: Role.BackendDeveloper, members: 8 },
+    ],
+    title: "Fresher Academy Management System",
+    summary:
+      "FAMS is a web-based platform to streamline the management of fresher training programs, enabling efficient tracking, reporting, and resource allocation.",
+    description:
+      "Fresher Academy Management System (FAMS) is an internal tool developed for FPT Software to manage fresher training programs. It provides functionalities for tracking trainee progress, managing course materials, and generating performance reports.",
+    problemStatement:
+      "Fresher training programs often face challenges with manual progress tracking, inconsistent reporting, and inefficient resource allocation, leading to delays and miscommunication.",
+    solutionOverview:
+      "FAMS addresses these issues by providing a centralized platform for automated progress tracking, real-time reporting, and resource management, improving training efficiency and team coordination.",
+    responsibilities: [
+      "Led an 8-member front-end team, defining coding conventions and setting up CI/CD pipelines with ESLint, Vitest, and Cypress to reduce bugs and accelerate development.",
+      "Evaluated and selected front-end technologies (React, TypeScript, Ant Design) to ensure scalability and maintainability.",
+      "Developed 60% of the front-end features, including trainee dashboards and reporting modules.",
+      "Mentored team members, conducted code reviews, and wrote unit tests to maintain code quality.",
+      "Collaborated with the Product Manager to define the product roadmap and deliver features on schedule.",
+      "Authored technical documentation to support cross-functional collaboration.",
+    ],
+    features: [
+      "Trainee progress tracking with real-time updates and performance analytics.",
+      "Course material management for centralized access to resources.",
+      "Reporting system for generating trainee and program performance reports.",
+      "Task management integration with Jira for Agile/Scrum workflows.",
+    ],
+    lessonsLearned: [
+      "Start with well-defined core features, then iteratively expand additional features based on user feedback and project priorities.",
+    ],
+    futurePlans: [
+      "Integrate AI-driven analytics for personalized trainee performance insights.",
+      "Add mobile app support for on-the-go access to training resources.",
+    ],
+  },
+  {
+    id: "pickle-play",
+    code: "pickle-play",
+    images: [
+      "/images/portfolio/project/pickle-play/1.png",
+      "/images/portfolio/project/pickle-play/2.png",
+      "/images/portfolio/project/pickle-play/3.png",
+      "/images/portfolio/project/pickle-play/4.png",
+      "/images/portfolio/project/pickle-play/5.png",
+      "/images/portfolio/project/pickle-play/6.png",
+      "/images/portfolio/project/pickle-play/7.png",
+      "/images/portfolio/project/pickle-play/8.png",
+    ],
+    techStack: [
+      {
+        category: TechStackCategory.Frontend,
+        tech: [
+          FrontendTech.NextJS,
+          FrontendTech.Typescript,
+          FrontendTech.TailwindCSS,
+        ],
+      },
+      {
+        category: TechStackCategory.Backend,
+        tech: [BackendTech.ExpressJs],
+      },
+      {
+        category: TechStackCategory.Mobile,
+        tech: [MobileTech.ReactNative],
+      },
+      {
+        category: TechStackCategory.Database,
+        tech: [DatabaseTech.PostgreSQL],
+      },
+      {
+        category: TechStackCategory.DevOps,
+        tech: [DevOpsTech.Vercel],
+      },
+      {
+        category: TechStackCategory.Others,
+        tech: [OtherTech.Figma, OtherTech.Postman, OtherTech.GitHub],
+      },
+    ],
+    metrics: {
+      users: [{ platform: ProjectPlatform.WebApp, count: 20 }],
+    },
+    platform: [ProjectPlatform.WebApp, ProjectPlatform.MobileApp],
+    category: [ProjectCategory.eCommerce],
+    resources: [
+      { type: ResourceType.Demo, url: "https://pickleplayvietnam.vercel.app/" },
+      {
+        type: ResourceType.Github,
+        url: "https://github.com/truongnhatquang21/badminton-fe",
+      },
+      {
+        type: ResourceType.Document,
+        url: "https://drive.google.com/drive/folders/1OV0lMUHi3TGhr0oea6rPonf7_fLMW6vU?usp=sharing",
+      },
+    ],
+    videoDemo: "/images/portfolio/project/pickle-play/Demo.mp4",
+    videoThumbnail: "/images/portfolio/project/pickle-play/Demo-Cover.jpg",
+    startTime: "2024-05-01",
+    endTime: "2024-11-01",
+    contribution: {
+      percentage: 45,
+      role: [Role.TeamLead, Role.FrontendDeveloper],
+    },
+    team: [
+      { role: Role.FrontendDeveloper, members: 3 },
+      { role: Role.BackendDeveloper, members: 2 },
+      { role: Role.UIUXDesigner, members: 1 },
+      { role: Role.Marketing, members: 1 },
+      { role: Role.AIEngineer, members: 1 },
+    ],
+    title: "PicklePlay",
+    summary:
+      "PicklePlay is a mobile and web platform that connects pickleball players with nearby courts, offering easy booking features.",
+    description:
+      "PicklePlay is an online platform and mobile app designed to help pickleball players find and book courts conveniently. It provides detailed information about court locations, opening hours, and prices, and fosters a vibrant community of players. The project was developed as part of an entrepreneurship course, with a focus on user convenience and community engagement.",
+    problemStatement:
+      "Pickleball players often struggle to find available courts and book them efficiently, leading to wasted time and missed opportunities for community engagement.",
+    solutionOverview:
+      "Pickle Play simplifies court discovery and booking with a user-friendly mobile app and web platform, integrating real-time court availability and community features to enhance the pickleball experience.",
+    responsibilities: [
+      "Led an 8-member team, managing project planning and task delegation on Trello to ensure timely delivery.",
+      "Developed website app using NextJS and mobile app using React Native, implementing court booking and order tracking features.",
+      "Designed use cases, UML, and ERD diagrams to align development with business objectives.",
+      "Coordinated customer outreach to validate platform features and align with user needs.",
+    ],
+    features: [
+      "Court discovery with detailed information on location, hours, and pricing.",
+      "Online booking system for quick and convenient court reservations.",
+      "Community features to connect players and share game schedules.",
+      "User profiles with booking history and preferences stored via Async Storage.",
+    ],
+    lessonsLearned: [
+      "Effective project management and clear task delegation are critical for meeting tight deadlines.",
+      "User feedback during development ensures the platform meets real-world needs.",
+    ],
+    futurePlans: [
+      "Add social features like in-app messaging for player coordination.",
+      "Integrate payment gateways for seamless booking transactions.",
+    ],
+  },
+  {
+    id: "artzy",
+    code: "artzy",
+    images: ["/images/portfolio/project/artzy/1.png"],
+    techStack: [
+      {
+        category: TechStackCategory.Mobile,
+        tech: [MobileTech.ReactNative],
+      },
+      {
+        category: TechStackCategory.Others,
+        tech: [OtherTech.GitHub],
+      },
+    ],
+    platform: [ProjectPlatform.MobileApp],
+    category: [ProjectCategory.InternalTool],
+    resources: [
+      { type: ResourceType.Github, url: "http://github.com/ngockim109/artzy/" },
+    ],
+    // videoDemo: "/images/portfolio/project/allure/Demo.mp4",
+    videoThumbnail: "/images/portfolio/project/allure/Demo-Cover.jpg",
+    startTime: "2024-05-10",
+    endTime: "2024-05-17",
+    title: "Artzy",
+    summary:
+      "Artzy: Art Tool Explorer App – A mobile app to browse, search, and save favorite art tools.",
+    description:
+      "Artzy is a mobile app built with Expo React Native, Tailwind CSS, and TypeScript to help users explore and manage art tools. It includes filtering, search, and detailed tool views, with the ability to save favorites locally using Async Storage for offline access.",
+    problemStatement:
+      "Artists and designers often struggle to keep track of useful digital tools, scattered across platforms with no central way to organize them.",
+    solutionOverview:
+      "Artzy provides a centralized, intuitive mobile platform to explore, filter, and save art tools for easy access, even offline.",
+    responsibilities: [
+      "Designed and developed the entire app using React Native.",
+      "Built UI and logic for search, filter, and local storage using Async Storage.",
+      "Managed codebase and versioning via GitHub.",
+    ],
+    features: [
+      "Filter tools by category.",
+      "Search and sort tools efficiently.",
+      "Save favorite tools locally for offline access.",
+    ],
+    lessonsLearned: ["Learn and use React Native and local state handling."],
+    futurePlans: [
+      "Add a tool submission form and cloud sync.",
+      "Enable user ratings or tags for each tool.",
     ],
   },
 ];
