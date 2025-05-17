@@ -138,6 +138,10 @@ exports.projects = [
         platform: [enum_1.ProjectPlatform.WebApp],
         category: [enum_1.ProjectCategory.InternalTool],
         resources: [
+            {
+                type: enum_1.ResourceType.Demo,
+                url: " https://student-management-system-git-main-hnam-truongs-projects.vercel.app"
+            },
             { type: enum_1.ResourceType.Github, url: "https://github.com/ngockim109/fams" },
             {
                 type: enum_1.ResourceType.Document,
@@ -157,23 +161,28 @@ exports.projects = [
             { role: enum_1.Role.BackendDeveloper, members: 8 },
         ],
         title: "Fresher Academy Management System",
-        summary: "FAMS is a web-based platform to streamline the management of fresher training programs, enabling efficient tracking, reporting, and resource allocation.",
-        description: "Fresher Academy Management System (FAMS) is an internal tool developed for FPT Software to manage fresher training programs. It provides functionalities for tracking trainee progress, managing course materials, and generating performance reports.",
-        problemStatement: "Fresher training programs often face challenges with manual progress tracking, inconsistent reporting, and inefficient resource allocation, leading to delays and miscommunication.",
-        solutionOverview: "FAMS addresses these issues by providing a centralized platform for automated progress tracking, real-time reporting, and resource management, improving training efficiency and team coordination.",
+        summary: "FAMS is a web-based platform designed to streamline the management of fresher training programs, supporting efficient tracking, reporting, user and class management, and resource allocation.",
+        description: "Fresher Academy Management System (FAMS) is an internal tool developed for FPT Software to manage end-to-end fresher training programs. It offers robust functionalities for managing students, classes, user roles, scores, reserved lists, and training progress, while also supporting real-time reporting and performance evaluation.",
+        problemStatement: "Fresher training programs often face challenges like manual progress tracking, inconsistent reporting, fragmented student data, and inefficient user and class management, resulting in miscommunication and delayed decisions.",
+        solutionOverview: "FAMS solves these problems through a centralized system for student, class, and user management, real-time tracking of trainee performance, score handling, reserved list actions, and detailed export/import options, significantly improving operational efficiency and training outcomes.",
         responsibilities: [
             "Led an 8-member front-end team, defining coding conventions and setting up CI/CD pipelines with ESLint, Vitest, and Cypress to reduce bugs and accelerate development.",
             "Evaluated and selected front-end technologies (React, TypeScript, Ant Design) to ensure scalability and maintainability.",
-            "Developed 60% of the front-end features, including trainee dashboards and reporting modules.",
+            "Developed 60% of the front-end features, including trainee dashboards, student/class management, and reporting modules.",
             "Mentored team members, conducted code reviews, and wrote unit tests to maintain code quality.",
             "Collaborated with the Product Manager to define the product roadmap and deliver features on schedule.",
             "Authored technical documentation to support cross-functional collaboration.",
         ],
         features: [
-            "Trainee progress tracking with real-time updates and performance analytics.",
-            "Course material management for centralized access to resources.",
-            "Reporting system for generating trainee and program performance reports.",
-            "Task management integration with Jira for Agile/Scrum workflows.",
+            "Student management: add, edit, delete, import/export, search, and status updates.",
+            "Reserved list handling: reclass, dropout, remove, remind, and bulk actions.",
+            "Class management: manage student-class assignments and performance scores.",
+            "User management: CRUD operations, search, import/export for internal roles.",
+            "Score management: import/export student scores, update score entries.",
+            "Real-time tracking of trainee progress and performance.",
+            "Search and filtering across all major modules for ease of use.",
+            "Reporting and export capabilities for decision-making.",
+            "Integration with task management tools like Jira for Agile workflows.",
         ],
         lessonsLearned: [
             "Start with well-defined core features, then iteratively expand additional features based on user feedback and project priorities.",

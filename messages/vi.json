@@ -1,22 +1,309 @@
 {
-  "Home": {
-    "title": "Xin chào!",
-    "about": "Go to the about page"
+  "config": {
+    "myName": "Thái Thị Ngọc Kim",
+    "myFirstName": "KIM"
   },
   "LocaleSwitcher": {
-    "locale": "{locale, select, en {English} vi {Việt Nam} zh {汉语} other {Không rõ}}"
+    "locale": "{locale, select, en {English} vi {Tiếng Việt} zh {汉语} other {Không xác định}}"
   },
   "ThemeProvider": {
     "ModeToggle": {
-      "mode": "{mode, select, light {Sáng} dark {Tối} system {Hệ thống} other {Không rõ}}",
+      "mode": "{mode, select, light {Sáng} dark {Tối} system {Hệ thống} other {Không xác định}}",
       "toggleTheme": "Chuyển đổi giao diện"
     }
   },
   "Error": {
-    "title": "Rất tiếc! Đã xảy ra lỗi!",
+    "title": "Ôi không! Đã xảy ra lỗi!",
     "button": {
       "tryAgain": "Thử lại",
       "goHome": "Về trang chủ"
+    },
+    "NotFound": {
+      "title": "Không tìm thấy",
+      "description": "Không thể tìm thấy tài nguyên yêu cầu!",
+      "button": {
+        "returnHome": "Quay về trang chủ"
+      }
+    }
+  },
+  "Navbar": {
+    "link": {
+      "home": "Trang chủ",
+      "about": "Giới thiệu",
+      "portfolio": "Dự án",
+      "blog": "Blog",
+      "contact": "Liên hệ"
+    }
+  },
+  "Footer": {
+    "description": "Tạo ra các trang web đẹp và hiệu quả giúp doanh nghiệp phát triển và thành công trên môi trường trực tuyến.",
+    "quickLinks": {
+      "title": "Liên kết nhanh"
+    }
+  },
+  "Contact": {
+    "connect": "Kết nối"
+  },
+  "Hero": {
+    "description": "Tôi thiết kế các ứng dụng web sạch sẽ, hiện đại, lấy người dùng làm trung tâm. Tôi yêu thích việc biến ý tưởng thành giải pháp thực tế — và trông thật đẹp mắt.",
+    "jobTitle": "Kỹ sư phần mềm",
+    "hi": "Chào, tôi là",
+    "i": "Tôi là "
+  },
+  "Button": {
+    "viewPortfolio": "Xem Dự Án",
+    "contactMe": "Liên hệ với tôi",
+    "downloadResume": "Tải CV",
+    "viewMore": "Xem thêm"
+  },
+  "Statistic": {
+    "title": "Thống Kê",
+    "description": "Thành tựu và cột mốc trong hành trình nghề nghiệp của tôi"
+  },
+  "ProjectData": {
+    "allure": {
+      "title": "Allure",
+      "summary": "Allure là nền tảng thương mại điện tử dành cho sản phẩm làm đẹp chính hãng, kết nối khách hàng với các thương hiệu chính thức, livestream của KOL và các chuyên gia tư vấn sắc đẹp.",
+      "description": "Allure là giải pháp thương mại điện tử toàn diện dành riêng cho ngành công nghiệp làm đẹp. Nền tảng này cho phép các thương hiệu chính hãng đăng ký, quản lý sản phẩm (bao gồm giảm giá nhanh, đặt trước, mua theo nhóm) và bán hàng trực tiếp đến khách hàng. Hệ thống cũng hỗ trợ các chuyên gia tư vấn làm đẹp cung cấp dịch vụ tư vấn cá nhân hóa và KOL tổ chức các sự kiện bán hàng trực tiếp. Hệ sinh thái bao gồm website và ứng dụng cho khách hàng, bảng điều khiển quản lý cho admin, nhà vận hành, thương hiệu, chuyên gia tư vấn, và giao diện riêng cho KOL.",
+      "problemStatement": "Các thương hiệu làm đẹp gặp khó khăn trong việc đảm bảo tính xác thực của sản phẩm và xây dựng lòng tin với khách hàng trên các kênh trực tuyến. Khách hàng thì khó tìm sản phẩm chính hãng và tư vấn phù hợp. Chuyên gia tư vấn thiếu nền tảng để tiếp cận khách hàng, và sự tương tác giữa khách hàng và thương hiệu/KOL thường thiếu sự cá nhân hóa.",
+      "solutionOverview": "Allure giải quyết những vấn đề trên bằng cách cho phép thương hiệu chính thức đăng ký để xác thực sản phẩm, kết nối khách hàng với chuyên gia tư vấn được xác minh, và mang lại trải nghiệm mua sắm tương tác, thời gian thực qua livestream của KOL—mang đến hành trình mua sắm đáng tin cậy và thú vị.",
+      "responsibilities": [
+        "Top #1 contributor trên GitHub cho các repo Website Khách hàng, Bảng điều khiển quản lý và Ứng dụng di động khách hàng.",
+        "Phát triển 70% luồng chính của frontend thương mại điện tử, xử lý tốt các trường hợp ngoại lệ (hết hàng, sản phẩm không hoạt động, hành động giỏ hàng không hợp lệ), giúp nâng cao độ tin cậy và trải nghiệm người dùng.",
+        "Triển khai 85% chức năng trong Ứng dụng di động bằng React Native.",
+        "Dẫn dắt thiết kế UI/UX trong sprint đầu tiên, tạo bản thiết kế Figma giúp tăng tốc phát triển frontend 30%.",
+        "Thiết kế tài liệu kỹ thuật bao gồm Swimlane Diagram và Screen Flow để hỗ trợ hợp tác đa phòng ban.",
+        "Tạo kế hoạch kiểm thử và thực hiện kiểm thử thủ công các chức năng chính nhằm đảm bảo trải nghiệm liền mạch và chu kỳ phát hành không lỗi."
+      ],
+      "features": [
+        "Đăng ký thương hiệu chính thức, quản lý sản phẩm (thường, giảm giá nhanh, đặt trước, mua theo nhóm), theo dõi đơn hàng, cập nhật trạng thái và phân tích doanh số.",
+        "Quản lý dịch vụ tư vấn: khách hàng có thể đặt lịch với chuyên gia, nhận tư vấn cá nhân và theo dõi lịch sử.",
+        "Bán hàng trực tiếp qua livestream KOL, nơi khách hàng có thể tương tác và mua sắm trong thời gian thực.",
+        "Hệ thống phản hồi và báo cáo để đảm bảo chất lượng dịch vụ và sự hài lòng của người dùng."
+      ],
+      "lessonsLearned": [
+        "Lập kế hoạch hiệu quả và tài liệu thiết kế sớm giúp giảm tắc nghẽn trong phát triển.",
+        "Tích hợp kiểm thử thủ công và tự động từ sớm giúp giảm lỗi và cải thiện độ ổn định khi phát hành."
+      ],
+      "futurePlans": [
+        "Tích hợp theo dõi đơn hàng thời gian thực với các đối tác vận chuyển.",
+        "Triển khai gợi ý sản phẩm và tư vấn dựa trên AI."
+      ]
+    },
+    "fams": {
+      "title": "Hệ thống quản lý đào tạo Fresher (FAMS)",
+      "summary": "FAMS là nền tảng web giúp tối ưu hóa việc quản lý chương trình đào tạo fresher, hỗ trợ theo dõi, báo cáo, quản lý người dùng, lớp học và phân bổ tài nguyên hiệu quả.",
+      "description": "Fresher Academy Management System (FAMS) là công cụ nội bộ phát triển cho FPT Software để quản lý toàn diện chương trình đào tạo fresher. Hệ thống hỗ trợ mạnh mẽ cho việc quản lý học viên, lớp học, vai trò người dùng, điểm số, danh sách bảo lưu và tiến độ học, đồng thời cung cấp báo cáo thời gian thực và đánh giá hiệu suất.",
+      "problemStatement": "Chương trình đào tạo fresher thường gặp khó khăn như theo dõi thủ công, báo cáo không nhất quán, dữ liệu học viên phân tán và quản lý không hiệu quả, dẫn đến truyền đạt kém và chậm ra quyết định.",
+      "solutionOverview": "FAMS giải quyết những vấn đề này thông qua một hệ thống tập trung để quản lý học viên, lớp học, người dùng; theo dõi tiến độ học theo thời gian thực; xử lý điểm số và danh sách bảo lưu; xuất/nhập dữ liệu chi tiết—giúp tăng hiệu suất vận hành và kết quả đào tạo.",
+      "responsibilities": [
+        "Dẫn dắt nhóm frontend 8 thành viên, định nghĩa quy chuẩn code và thiết lập CI/CD (ESLint, Vitest, Cypress) để giảm lỗi và tăng tốc độ phát triển.",
+        "Đánh giá và chọn công nghệ frontend (React, TypeScript, Ant Design) đảm bảo mở rộng và bảo trì dễ dàng.",
+        "Phát triển 60% chức năng frontend, bao gồm dashboard học viên, quản lý học viên/lớp, và module báo cáo.",
+        "Hướng dẫn thành viên, kiểm tra code và viết unit test để duy trì chất lượng mã nguồn.",
+        "Phối hợp với PM để định hình roadmap sản phẩm và đảm bảo giao đúng tiến độ.",
+        "Viết tài liệu kỹ thuật hỗ trợ cộng tác liên phòng ban."
+      ],
+      "features": [
+        "Quản lý học viên: thêm, sửa, xoá, nhập/xuất, tìm kiếm, cập nhật trạng thái.",
+        "Xử lý danh sách bảo lưu: phân lớp lại, thôi học, nhắc nhở, xoá hàng loạt.",
+        "Quản lý lớp học: phân lớp học viên, nhập điểm và đánh giá kết quả.",
+        "Quản lý người dùng: CRUD, tìm kiếm, nhập/xuất dữ liệu nội bộ.",
+        "Quản lý điểm số: nhập/xuất, cập nhật điểm học viên.",
+        "Theo dõi tiến độ và hiệu suất học viên theo thời gian thực.",
+        "Tìm kiếm và lọc dữ liệu trong tất cả các module chính.",
+        "Xuất báo cáo phục vụ ra quyết định.",
+        "Tích hợp công cụ quản lý công việc như Jira cho quy trình Agile."
+      ],
+      "lessonsLearned": [
+        "Bắt đầu với các chức năng cốt lõi được xác định rõ ràng, sau đó mở rộng dựa trên phản hồi người dùng và ưu tiên dự án."
+      ],
+      "futurePlans": [
+        "Tích hợp phân tích dựa trên AI để cá nhân hoá đánh giá học viên.",
+        "Phát triển ứng dụng di động hỗ trợ học viên truy cập nội dung mọi lúc mọi nơi."
+      ]
+    },
+    "pickle-play": {
+      "title": "PicklePlay",
+      "summary": "PicklePlay là nền tảng web và di động kết nối người chơi pickleball với sân gần đó, hỗ trợ đặt sân dễ dàng.",
+      "description": "PicklePlay là nền tảng trực tuyến và ứng dụng di động giúp người chơi pickleball tìm và đặt sân tiện lợi. Cung cấp thông tin chi tiết về địa điểm, giờ mở cửa và giá cả, đồng thời tạo ra một cộng đồng người chơi sôi động. Dự án được phát triển trong một khóa học khởi nghiệp, tập trung vào tiện ích người dùng và sự kết nối cộng đồng.",
+      "problemStatement": "Người chơi pickleball thường gặp khó khăn trong việc tìm và đặt sân phù hợp, gây lãng phí thời gian và bỏ lỡ cơ hội giao lưu.",
+      "solutionOverview": "PicklePlay đơn giản hóa việc tìm kiếm và đặt sân thông qua nền tảng thân thiện, tích hợp thông tin sân theo thời gian thực và các tính năng cộng đồng để nâng cao trải nghiệm chơi pickleball.",
+      "responsibilities": [
+        "Dẫn dắt nhóm 8 thành viên, lập kế hoạch và phân công nhiệm vụ trên Trello để đảm bảo tiến độ.",
+        "Phát triển website bằng NextJS và app di động bằng React Native, tích hợp chức năng đặt sân và theo dõi đơn đặt.",
+        "Thiết kế Use Case, UML và ERD để đảm bảo phát triển phù hợp với mục tiêu kinh doanh.",
+        "Phối hợp tiếp cận người dùng để kiểm chứng tính năng và điều chỉnh theo nhu cầu thực tế."
+      ],
+      "features": [
+        "Tìm sân với thông tin chi tiết về vị trí, giờ hoạt động và giá.",
+        "Hệ thống đặt sân trực tuyến nhanh chóng, tiện lợi.",
+        "Tính năng cộng đồng để kết nối người chơi và chia sẻ lịch thi đấu.",
+        "Hồ sơ người dùng với lịch sử đặt sân và tuỳ chọn được lưu trữ bằng Async Storage."
+      ],
+      "lessonsLearned": [
+        "Quản lý dự án hiệu quả và phân công rõ ràng là yếu tố then chốt để hoàn thành đúng hạn.",
+        "Phản hồi người dùng trong quá trình phát triển giúp đảm bảo sản phẩm đáp ứng nhu cầu thực tế."
+      ],
+      "futurePlans": [
+        "Thêm tính năng xã hội như nhắn tin trong ứng dụng để người chơi phối hợp dễ dàng.",
+        "Tích hợp cổng thanh toán để đặt sân trực tiếp trong ứng dụng."
+      ]
+    },
+    "artzy": {
+      "title": "Artzy",
+      "summary": "Artzy: Ứng dụng khám phá công cụ nghệ thuật – Ứng dụng di động để tìm kiếm, lọc và lưu các công cụ yêu thích.",
+      "description": "Artzy là ứng dụng di động được xây dựng với Expo React Native, Tailwind CSS và TypeScript, giúp người dùng khám phá và quản lý các công cụ nghệ thuật. Bao gồm tính năng lọc, tìm kiếm, xem chi tiết và lưu yêu thích bằng Async Storage để sử dụng ngoại tuyến.",
+      "problemStatement": "Nghệ sĩ và nhà thiết kế thường gặp khó khăn trong việc theo dõi các công cụ số hữu ích vốn phân tán trên nhiều nền tảng mà không có cách tổ chức tập trung.",
+      "solutionOverview": "Artzy cung cấp nền tảng di động trực quan, tập trung để khám phá, lọc và lưu trữ công cụ nghệ thuật dễ dàng, kể cả khi ngoại tuyến.",
+      "responsibilities": [
+        "Thiết kế và phát triển toàn bộ ứng dụng bằng React Native.",
+        "Xây dựng giao diện và logic cho tìm kiếm, lọc và lưu dữ liệu bằng Async Storage.",
+        "Quản lý mã nguồn và version bằng GitHub."
+      ],
+      "features": [
+        "Lọc công cụ theo danh mục.",
+        "Tìm kiếm và sắp xếp công cụ hiệu quả.",
+        "Lưu công cụ yêu thích để sử dụng khi không có mạng."
+      ],
+      "lessonsLearned": [
+        "Học và áp dụng React Native cùng quản lý trạng thái nội bộ."
+      ],
+      "futurePlans": [
+        "Thêm form gửi công cụ và đồng bộ đám mây.",
+        "Cho phép người dùng đánh giá hoặc gắn thẻ công cụ."
+      ]
+    }
+  },
+  "FeaturedProject": {
+    "title": "Dự Án Tiêu Biểu",
+    "description": "Một số dự án tôi đã thực hiện — sử dụng công nghệ hiện đại, tập trung vào chức năng và không ngừng cải thiện trải nghiệm người dùng và chất lượng mã nguồn."
+  },
+  "Skill": {
+    "title": "Kỹ Năng",
+    "description": "Những kỹ năng chính của tôi"
+  },
+  "Experience": {
+    "title": "Kinh Nghiệm",
+    "description": "Hành trình của tôi trong ngành công nghệ",
+    "projects": "Dự án"
+  },
+  "ExperienceData": {
+    "FPT": {
+      "position": "Thực Tập Sinh Front-End",
+      "company": "FPT Software",
+      "location": "TP. Hồ Chí Minh, Việt Nam",
+      "description": [
+        "Tốt nghiệp với điểm tuyệt đối (10/10).",
+        "Dẫn dắt nhóm 8 thành viên theo phương pháp Agile/Scrum bằng công cụ Jira, đảm bảo kế hoạch hiệu quả, theo dõi tiến độ và báo cáo suôn sẻ.",
+        "Là lớp trưởng, tích cực dẫn dắt lớp tham gia các hoạt động công ty và đạt được nhiều thành tích."
+      ]
+    }
+  },
+  "Date": {
+    "normal": "{value, date}",
+    "short": "{value, date, short}"
+  },
+  "Education": {
+    "title": "Học Vấn",
+    "gpa": "Điểm trung bình",
+    "achievements": "Thành tích & Hoạt động"
+  },
+  "Copyright": {
+    "title": "Bản quyền"
+  },
+  "EducationData": {
+    "FPT": {
+      "title": "{degree} ngành {field}",
+      "institution": "Đại học FPT",
+      "degree": "Kỹ sư",
+      "field": "Kỹ thuật phần mềm",
+      "location": "TP. Hồ Chí Minh, Việt Nam"
+    }
+  },
+  "Certification": {
+    "title": "Chứng Chỉ"
+  },
+  "CertificationData": {},
+  "Blog": {
+    "title": "Blog"
+  },
+  "StatisticData": {
+    "language": {
+      "title": "Ngôn ngữ"
+    },
+    "projects": {
+      "title": "Dự án đã hoàn thành"
+    },
+    "yearExp": {
+      "title": "Năm kinh nghiệm"
+    },
+    "certificated": {
+      "title": "Đã được chứng nhận"
+    },
+    "paper": {
+      "title": "Bài báo"
+    },
+    "award": {
+      "title": "Giải thưởng"
+    },
+    "clients": {
+      "title": "Khách hàng hài lòng"
+    }
+  },
+  "Common": {
+    "all": "Tất cả",
+    "prev": "Trước",
+    "next": "Tiếp theo",
+    "goBack": "Quay lại"
+  },
+  "Empty": {
+    "projectDetail": {
+      "title": "Không Tìm Thấy Dự Án",
+      "description": "Chi tiết dự án hiện không khả dụng. Có thể đã bị xóa hoặc chưa được tạo."
+    },
+    "video": {
+      "description": "Trình duyệt của bạn không hỗ trợ thẻ video"
+    },
+    "na": "Không có",
+    "posts": {
+      "title": "Chưa Có Bài Viết",
+      "description": "Hiện tại chưa có bài viết nào"
+    }
+  },
+  "ProjectDetail": {
+    "timeline": "Dòng thời gian",
+    "categories": "Danh mục",
+    "platforms": "Nền tảng",
+    "teamSize": "Số thành viên",
+    "members": "Thành viên",
+    "techStack": "Công nghệ sử dụng",
+    "tab": {
+      "overview": "Tổng quan",
+      "features": "Tính năng",
+      "responsibilities": "Trách nhiệm",
+      "lessons": "Bài học & Kế hoạch tương lai"
+    },
+    "description": "Mô tả",
+    "features": "Tính năng",
+    "futurePlans": "Kế hoạch tương lai",
+    "lessons": "Bài học rút ra",
+    "responsibilities": "Trách nhiệm",
+    "achievements": "Thành tích",
+    "solution": "Giải pháp",
+    "problem": "Vấn đề",
+    "relatedProjects": "Dự án liên quan",
+    "backToPortfolio": "Quay lại Portfolio",
+    "users": "Người dùng",
+    "contribution": "Đóng góp",
+    "roles": "Vai trò",
+    "resources": "Tài nguyên",
+    "gallery": "Thư viện",
+    "viewProjectDetail": "Xem chi tiết dự án"
+  },
+  "Posts": {
+    "search": {
+      "placeholder": "Tìm kiếm theo tiêu đề, mô tả..."
     }
   }
 }

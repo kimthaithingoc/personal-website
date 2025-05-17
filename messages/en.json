@@ -3,12 +3,8 @@
     "myName": "Thai Thi Ngoc Kim",
     "myFirstName": "KIM"
   },
-  "Home": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
-  },
   "LocaleSwitcher": {
-    "locale": "{locale, select, en {English} vi {Việt Nam} zh {汉语} other {Unknown}}"
+    "locale": "{locale, select, en {English} vi {Tiếng Việt} zh {汉语} other {Unknown}}"
   },
   "ThemeProvider": {
     "ModeToggle": {
@@ -65,16 +61,6 @@
     "description": "Achievements and milestones from my professional journey"
   },
   "ProjectData": {
-    "artzy": {
-      "title": "Artzy",
-      "description": "",
-      "summary": "",
-      "problemStatement": "",
-      "solutionOverview": "",
-      "responsibilities": [],
-      "achievements": [],
-      "features": []
-    },
     "allure": {
       "title": "Allure",
       "summary": "Allure is an e-commerce platform for authentic beauty products, connecting customers with official brands, KOL livestreams, and professional beauty consultants.",
@@ -104,15 +90,89 @@
         "Implement AI-based product recommendations and consultation matching."
       ]
     },
-    "sample": {
-      "title": "",
-      "description": "",
-      "summary": "",
-      "problemStatement": "",
-      "solutionOverview": "",
-      "responsibilities": [],
-      "achievements": [],
-      "features": []
+    "fams": {
+      "title": "Fresher Academy Management System",
+      "summary": "FAMS is a web-based platform designed to streamline the management of fresher training programs, supporting efficient tracking, reporting, user and class management, and resource allocation.",
+      "description": "Fresher Academy Management System (FAMS) is an internal tool developed for FPT Software to manage end-to-end fresher training programs. It offers robust functionalities for managing students, classes, user roles, scores, reserved lists, and training progress, while also supporting real-time reporting and performance evaluation.",
+      "problemStatement": "Fresher training programs often face challenges like manual progress tracking, inconsistent reporting, fragmented student data, and inefficient user and class management, resulting in miscommunication and delayed decisions.",
+      "solutionOverview": "FAMS solves these problems through a centralized system for student, class, and user management, real-time tracking of trainee performance, score handling, reserved list actions, and detailed export/import options, significantly improving operational efficiency and training outcomes.",
+      "responsibilities": [
+        "Led an 8-member front-end team, defining coding conventions and setting up CI/CD pipelines with ESLint, Vitest, and Cypress to reduce bugs and accelerate development.",
+        "Evaluated and selected front-end technologies (React, TypeScript, Ant Design) to ensure scalability and maintainability.",
+        "Developed 60% of the front-end features, including trainee dashboards, student/class management, and reporting modules.",
+        "Mentored team members, conducted code reviews, and wrote unit tests to maintain code quality.",
+        "Collaborated with the Product Manager to define the product roadmap and deliver features on schedule.",
+        "Authored technical documentation to support cross-functional collaboration."
+      ],
+      "features": [
+        "Student management: add, edit, delete, import/export, search, and status updates.",
+        "Reserved list handling: reclass, dropout, remove, remind, and bulk actions.",
+        "Class management: manage student-class assignments and performance scores.",
+        "User management: CRUD operations, search, import/export for internal roles.",
+        "Score management: import/export student scores, update score entries.",
+        "Real-time tracking of trainee progress and performance.",
+        "Search and filtering across all major modules for ease of use.",
+        "Reporting and export capabilities for decision-making.",
+        "Integration with task management tools like Jira for Agile workflows."
+      ],
+      "lessonsLearned": [
+        "Start with well-defined core features, then iteratively expand additional features based on user feedback and project priorities."
+      ],
+      "futurePlans": [
+        "Integrate AI-driven analytics for personalized trainee performance insights.",
+        "Add mobile app support for on-the-go access to training resources."
+      ]
+    },
+    "pickle-play": {
+      "title": "PicklePlay",
+      "summary": "PicklePlay is a mobile and web platform that connects pickleball players with nearby courts, offering easy booking features.",
+      "description": "PicklePlay is an online platform and mobile app designed to help pickleball players find and book courts conveniently. It provides detailed information about court locations, opening hours, and prices, and fosters a vibrant community of players. The project was developed as part of an entrepreneurship course, with a focus on user convenience and community engagement.",
+      "problemStatement": "Pickleball players often struggle to find available courts and book them efficiently, leading to wasted time and missed opportunities for community engagement.",
+      "solutionOverview": "Pickle Play simplifies court discovery and booking with a user-friendly mobile app and web platform, integrating real-time court availability and community features to enhance the pickleball experience.",
+      "responsibilities": [
+        "Led an 8-member team, managing project planning and task delegation on Trello to ensure timely delivery.",
+        "Developed website app using NextJS and mobile app using React Native, implementing court booking and order tracking features.",
+        "Designed use cases, UML, and ERD diagrams to align development with business objectives.",
+        "Coordinated customer outreach to validate platform features and align with user needs."
+      ],
+      "features": [
+        "Court discovery with detailed information on location, hours, and pricing.",
+        "Online booking system for quick and convenient court reservations.",
+        "Community features to connect players and share game schedules.",
+        "User profiles with booking history and preferences stored via Async Storage."
+      ],
+      "lessonsLearned": [
+        "Effective project management and clear task delegation are critical for meeting tight deadlines.",
+        "User feedback during development ensures the platform meets real-world needs."
+      ],
+      "futurePlans": [
+        "Add social features like in-app messaging for player coordination.",
+        "Integrate payment gateways for seamless booking transactions."
+      ]
+    },
+    "artzy": {
+      "title": "Artzy",
+      "summary": "Artzy: Art Tool Explorer App – A mobile app to browse, search, and save favorite art tools.",
+      "description": "Artzy is a mobile app built with Expo React Native, Tailwind CSS, and TypeScript to help users explore and manage art tools. It includes filtering, search, and detailed tool views, with the ability to save favorites locally using Async Storage for offline access.",
+      "problemStatement": "Artists and designers often struggle to keep track of useful digital tools, scattered across platforms with no central way to organize them.",
+      "solutionOverview": "Artzy provides a centralized, intuitive mobile platform to explore, filter, and save art tools for easy access, even offline.",
+      "responsibilities": [
+        "Designed and developed the entire app using React Native.",
+        "Built UI and logic for search, filter, and local storage using Async Storage.",
+        "Managed codebase and versioning via GitHub."
+      ],
+      "features": [
+        "Filter tools by category.",
+        "Search and sort tools efficiently.",
+        "Save favorite tools locally for offline access."
+      ],
+      "lessonsLearned": [
+        "Learn and use React Native and local state handling."
+      ],
+      "futurePlans": [
+        "Add a tool submission form and cloud sync.",
+        "Enable user ratings or tags for each tool."
+      ]
     }
   },
   "FeaturedProject": {

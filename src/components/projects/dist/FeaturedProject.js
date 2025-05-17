@@ -19,7 +19,7 @@ var FeaturedProject = function () {
             } },
             react_1["default"].createElement("span", { className: "relative z-10" }, t("title")),
             react_1["default"].createElement("span", { className: "absolute inset-0 rounded-full -z-10 bg-gradient-to-r from-primary to-background p-0.5 -m-0.5" })),
-        react_1["default"].createElement("div", { className: "grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3" }, data_1.projects.map(function (project, index) { return (react_1["default"].createElement(ProjectCard_1["default"], { key: project.id, project: project, sectionRef: sectionRef, index: index })); })),
+        react_1["default"].createElement("div", { className: "grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3" }, data_1.projects.slice(0, 3).map(function (project, index) { return (react_1["default"].createElement(ProjectCard_1["default"], { key: project.id, project: project, sectionRef: sectionRef, index: index })); })),
         react_1["default"].createElement(link_1["default"], { href: "/portfolio/", className: "font-semibold flex items-center gap-1 hover:opacity-80", onMouseEnter: function () { return setIsHover(true); }, onMouseLeave: function () { return setIsHover(false); } },
             react_1["default"].createElement("span", null, tButton("viewMore")),
             react_1["default"].createElement(lucide_react_1.MoveRight, { className: "w-4 h-4 transition-transform", style: {
