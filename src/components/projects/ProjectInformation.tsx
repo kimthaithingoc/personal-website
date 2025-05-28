@@ -2,7 +2,6 @@ import { IProject } from "@/types/project";
 import { useTranslations } from "next-intl";
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
-import Gallery from "./Gallery";
 
 interface ProjectDetailProps {
   project: IProject;
@@ -47,13 +46,6 @@ const ProjectInformation = ({ project }: ProjectDetailProps) => {
             </h3>
             <p>{project.solutionOverview}</p>
           </div>
-
-          {/* Gallery */}
-          <Gallery
-            images={project.images ?? []}
-            title="ProjectDetail.gallery"
-            alt={`View image of ${project.title}`}
-          />
         </TabsContent>
 
         <TabsContent value="features" className="space-y-4 text-justify">

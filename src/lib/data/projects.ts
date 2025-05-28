@@ -35,6 +35,29 @@ export const projects: IProject[] = [
       "/images/portfolio/project/allure/17.png",
       "/images/portfolio/project/allure/18.png",
     ],
+    mobileImages: [
+      "/images/portfolio/project/allure/19.jpg",
+      "/images/portfolio/project/allure/20.jpg",
+      "/images/portfolio/project/allure/21.jpg",
+      "/images/portfolio/project/allure/22.jpg",
+      "/images/portfolio/project/allure/23.jpg",
+      "/images/portfolio/project/allure/24.jpg",
+      "/images/portfolio/project/allure/25.jpg",
+      "/images/portfolio/project/allure/26.jpg",
+      "/images/portfolio/project/allure/27.jpg",
+      "/images/portfolio/project/allure/28.jpg",
+      "/images/portfolio/project/allure/29.jpg",
+      "/images/portfolio/project/allure/30.jpg",
+      "/images/portfolio/project/allure/31.jpg",
+      "/images/portfolio/project/allure/32.jpg",
+      "/images/portfolio/project/allure/33.jpg",
+      "/images/portfolio/project/allure/34.jpg",
+      "/images/portfolio/project/allure/35.jpg",
+      "/images/portfolio/project/allure/36.jpg",
+      "/images/portfolio/project/allure/37.jpg",
+      "/images/portfolio/project/allure/38.jpg",
+      "/images/portfolio/project/allure/39.jpg",
+    ],
     techStack: [
       {
         category: TechStackCategory.Frontend,
@@ -84,7 +107,7 @@ export const projects: IProject[] = [
     startTime: "2024-10-06",
     endTime: "2025-05-08",
     contribution: {
-      percentage: 35,
+      percentage: 30,
       role: [Role.FrontendDeveloper, Role.UIUXDesigner],
     },
     team: [
@@ -95,7 +118,7 @@ export const projects: IProject[] = [
     summary:
       "Allure is an e-commerce platform for authentic beauty products, connecting customers with official brands, KOL livestreams, and professional beauty consultants.",
     description:
-      "Allure is an end-to-end e-commerce solution tailored for the beauty industry. It enables official beauty brands to register, manage product listings (including flash sales, pre-orders, and group buying), and directly sell to customers. The platform also includes features for professional beauty consultants to offer personalized makeup consultations and for KOLs (Key Opinion Leaders) to host live selling events. The system comprises a customer-facing website and app, a management dashboard for admin, operator, brands, consultants, and a KOL interface.",
+      "Allure is an end-to-end e-commerce solution tailored for the beauty industry. It enables official beauty brands to register, manage product listings (including flash sales, pre-orders, and group buying), and directly sell to customers. The platform also includes features for professional beauty consultants to offer personalized makeup consultations and for KOLs (Key Opinion Leaders) to host live selling events. The system comprises a customer-facing website and app, a management dashboard for admin, operator, brands, consultants, as well as a dedicated app for KOLs.",
     problemStatement:
       "Beauty brands face challenges ensuring product authenticity and customer trust in online channels. Customers often struggle to find genuine products and personalized beauty advice. Consultants have limited platforms for exposure, and engagement between customers and brands/KOLs is often impersonal and transactional.",
     solutionOverview:
@@ -106,7 +129,7 @@ export const projects: IProject[] = [
       "Implemented 85% of the features in the Customer Mobile App using React Native.",
       "Designed 90% of screens and components in Figma, accelerating frontend development by 30%.",
       "Designed technical documentation including Swimlane Diagrams and Screen Flows for better cross-functional collaboration.",
-      "Created test plans and executed manual testing on core e-commerce functionalities to ensure seamless user experience and bug-free release cycles.",
+      "Created test documents and executed manual testing on core e-commerce functionalities to ensure seamless user experience and bug-free release cycles.",
     ],
     features: [
       "Official brand registration with product management (normal, flash sale, pre-order, group buying), order tracking, status updates, and sales analytics.",
@@ -126,7 +149,11 @@ export const projects: IProject[] = [
   {
     id: "fams",
     code: "fams",
-    images: ["/images/portfolio/project/fams/1.png"],
+    images: [
+      "/images/portfolio/project/fams/1.png",
+      "/images/portfolio/project/fams/2.png",
+      "/images/portfolio/project/fams/3.png",
+    ],
     techStack: [
       {
         category: TechStackCategory.Frontend,
@@ -156,7 +183,7 @@ export const projects: IProject[] = [
     resources: [
       {
         type: ResourceType.Demo,
-        url: " https://student-management-system-git-main-hnam-truongs-projects.vercel.app",
+        url: "https://student-management-system-git-main-hnam-truongs-projects.vercel.app",
       },
       { type: ResourceType.Github, url: "https://github.com/ngockim109/fams" },
       {
@@ -164,12 +191,11 @@ export const projects: IProject[] = [
         url: "https://drive.google.com/drive/folders/1ZbFRJq9cDW0_sQOVn35aGzi-epHJLir9?usp=sharing",
       },
     ],
-    // videoDemo: "/images/portfolio/project/fams/Demo.mp4",
-    videoThumbnail: "/images/portfolio/project/fams/Demo-Cover.jpg",
+    videoThumbnail: "/images/portfolio/project/fams/Demo-Cover.png",
     startTime: "2024-01-01",
     endTime: "2025-05-17",
     contribution: {
-      percentage: 50,
+      percentage: 10,
       role: [Role.TeamLead, Role.FrontendDeveloper],
     },
     team: [
@@ -178,20 +204,19 @@ export const projects: IProject[] = [
     ],
     title: "Fresher Academy Management System",
     summary:
-      "FAMS is a web-based platform designed to streamline the management of fresher training programs, supporting efficient tracking, reporting, user and class management, and resource allocation.",
+      "FAMS is a web-based platform designed to streamline fresher training management by providing centralized control over students, users, scores, and reservations.",
     description:
-      "Fresher Academy Management System (FAMS) is an internal tool developed for FPT Software to manage end-to-end fresher training programs. It offers robust functionalities for managing students, classes, user roles, scores, reserved lists, and training progress, while also supporting real-time reporting and performance evaluation.",
+      "Fresher Academy Management System (FAMS) is an internal platform developed for FPT Software to efficiently manage fresher training programs. It supports end-to-end management of student records, user roles, performance scores, and reservation handling",
     problemStatement:
-      "Fresher training programs often face challenges like manual progress tracking, inconsistent reporting, fragmented student data, and inefficient user and class management, resulting in miscommunication and delayed decisions.",
+      "Managing fresher training manually leads to fragmented data, inconsistent reporting, delayed decisions, and inefficient coordination of students, users, and class assignments.",
     solutionOverview:
-      "FAMS solves these problems through a centralized system for student, class, and user management, real-time tracking of trainee performance, score handling, reserved list actions, and detailed export/import options, significantly improving operational efficiency and training outcomes.",
+      "FAMS addresses these issues with a centralized system that simplifies student, user, score, and reservation management. Real-time tracking, performance evaluation, and import/export features significantly improve training efficiency and data accuracy.",
     responsibilities: [
       "Led an 8-member front-end team, defining coding conventions and setting up CI/CD pipelines with ESLint, Vitest, and Cypress to reduce bugs and accelerate development.",
       "Evaluated and selected front-end technologies (React, TypeScript, Ant Design) to ensure scalability and maintainability.",
-      "Developed 60% of the front-end features, including trainee dashboards, student/class management, and reporting modules.",
+      "Developed front-end features, including manage score, reserved student and user.",
       "Mentored team members, conducted code reviews, and wrote unit tests to maintain code quality.",
       "Collaborated with the Product Manager to define the product roadmap and deliver features on schedule.",
-      "Authored technical documentation to support cross-functional collaboration.",
     ],
     features: [
       "Student management: add, edit, delete, import/export, search, and status updates.",
@@ -199,10 +224,8 @@ export const projects: IProject[] = [
       "Class management: manage student-class assignments and performance scores.",
       "User management: CRUD operations, search, import/export for internal roles.",
       "Score management: import/export student scores, update score entries.",
-      "Real-time tracking of trainee progress and performance.",
       "Search and filtering across all major modules for ease of use.",
       "Reporting and export capabilities for decision-making.",
-      "Integration with task management tools like Jira for Agile workflows.",
     ],
     lessonsLearned: [
       "Start with well-defined core features, then iteratively expand additional features based on user feedback and project priorities.",
@@ -272,11 +295,11 @@ export const projects: IProject[] = [
       },
     ],
     videoDemo: "/images/portfolio/project/pickle-play/Demo.mp4",
-    videoThumbnail: "/images/portfolio/project/pickle-play/Demo-Cover.jpg",
+    videoThumbnail: "/images/portfolio/project/pickle-play/Demo-Cover.png",
     startTime: "2024-05-01",
     endTime: "2024-11-01",
     contribution: {
-      percentage: 45,
+      percentage: 20,
       role: [Role.TeamLead, Role.FrontendDeveloper],
     },
     team: [
@@ -297,29 +320,38 @@ export const projects: IProject[] = [
       "Pickle Play simplifies court discovery and booking with a user-friendly mobile app and web platform, integrating real-time court availability and community features to enhance the pickleball experience.",
     responsibilities: [
       "Led an 8-member team, managing project planning and task delegation on Trello to ensure timely delivery.",
-      "Developed website app using NextJS and mobile app using React Native, implementing court booking and order tracking features.",
+      "Developed website app using NextJS and mobile app using React Native, implementing court booking history and order tracking features.",
       "Designed use cases, UML, and ERD diagrams to align development with business objectives.",
       "Coordinated customer outreach to validate platform features and align with user needs.",
     ],
     features: [
       "Court discovery with detailed information on location, hours, and pricing.",
       "Online booking system for quick and convenient court reservations.",
-      "Community features to connect players and share game schedules.",
-      "User profiles with booking history and preferences stored via Async Storage.",
+      "User profiles with booking and order history.",
     ],
     lessonsLearned: [
-      "Effective project management and clear task delegation are critical for meeting tight deadlines.",
       "User feedback during development ensures the platform meets real-world needs.",
     ],
     futurePlans: [
-      "Add social features like in-app messaging for player coordination.",
-      "Integrate payment gateways for seamless booking transactions.",
+      "Add social features like community and in-app messaging for player coordination.",
     ],
   },
   {
     id: "artzy",
     code: "artzy",
     images: ["/images/portfolio/project/artzy/1.png"],
+    mobileImages: [
+      "/images/portfolio/project/artzy/2.jpg",
+      "/images/portfolio/project/artzy/3.jpg",
+      "/images/portfolio/project/artzy/4.jpg",
+      "/images/portfolio/project/artzy/5.jpg",
+      "/images/portfolio/project/artzy/6.jpg",
+      "/images/portfolio/project/artzy/7.jpg",
+      "/images/portfolio/project/artzy/8.jpg",
+      "/images/portfolio/project/artzy/9.jpg",
+      "/images/portfolio/project/artzy/10.jpg",
+      "/images/portfolio/project/artzy/11.jpg",
+    ],
     techStack: [
       {
         category: TechStackCategory.Mobile,
@@ -335,8 +367,8 @@ export const projects: IProject[] = [
     resources: [
       { type: ResourceType.Github, url: "http://github.com/ngockim109/artzy/" },
     ],
-    // videoDemo: "/images/portfolio/project/allure/Demo.mp4",
-    videoThumbnail: "/images/portfolio/project/allure/Demo-Cover.jpg",
+    videoDemo: "/images/portfolio/project/artzy/Demo.mp4",
+    videoThumbnail: "/images/portfolio/project/artzy/Demo-Cover.png",
     startTime: "2024-05-10",
     endTime: "2024-05-17",
     title: "Artzy",
@@ -350,6 +382,7 @@ export const projects: IProject[] = [
       "Artzy provides a centralized, intuitive mobile platform to explore, filter, and save art tools for easy access, even offline.",
     responsibilities: [
       "Designed and developed the entire app using React Native.",
+      "Implemented smooth interactions using gesture-handler and intuitive layouts with bottom-sheet and masonry-list.",
       "Built UI and logic for search, filter, and local storage using Async Storage.",
       "Managed codebase and versioning via GitHub.",
     ],

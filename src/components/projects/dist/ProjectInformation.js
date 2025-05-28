@@ -3,9 +3,7 @@ exports.__esModule = true;
 var next_intl_1 = require("next-intl");
 var react_1 = require("react");
 var tabs_1 = require("../ui/tabs");
-var Gallery_1 = require("./Gallery");
 var ProjectInformation = function (_a) {
-    var _b;
     var project = _a.project;
     var t = next_intl_1.useTranslations();
     var tabs = ["overview", "features", "responsibilities", "lessons"];
@@ -21,8 +19,7 @@ var ProjectInformation = function (_a) {
                     react_1["default"].createElement("p", null, project.problemStatement)),
                 react_1["default"].createElement("div", { className: "space-y-2" },
                     react_1["default"].createElement("h3", { className: "mb-3 text-lg font-semibold" }, t("ProjectDetail.solution")),
-                    react_1["default"].createElement("p", null, project.solutionOverview)),
-                react_1["default"].createElement(Gallery_1["default"], { images: (_b = project.images) !== null && _b !== void 0 ? _b : [], title: "ProjectDetail.gallery", alt: "View image of " + project.title })),
+                    react_1["default"].createElement("p", null, project.solutionOverview))),
             react_1["default"].createElement(tabs_1.TabsContent, { value: "features", className: "space-y-4 text-justify" },
                 react_1["default"].createElement("h2", { className: "mb-3 text-lg font-semibold" }, t("ProjectDetail.features")),
                 react_1["default"].createElement("ul", { className: "ml-6 list-disc space-y-2" }, project.features.map(function (feature, index) { return (react_1["default"].createElement("li", { key: index }, feature)); })),

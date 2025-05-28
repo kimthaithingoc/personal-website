@@ -296,8 +296,10 @@
     "contribution": "贡献",
     "roles": "角色",
     "resources": "资源",
-    "gallery": "图库",
-    "viewProjectDetail": "查看项目详情"
+    "mobileAppPreview": "移动应用预览",
+    "webPreview": "网页预览",
+    "viewProjectDetail": "查看项目详情",
+    "percentage": "百分比"
   },
   "Posts": {
     "search": {

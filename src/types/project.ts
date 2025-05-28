@@ -15,6 +15,7 @@ import { IIdentifiable } from "./identifiable";
 
 export interface IProjectCore extends IIdentifiable {
   images: string[];
+  mobileImages?: string[];
   videoDemo?: string;
   videoThumbnail?: string;
   techStack: ITechStack[];

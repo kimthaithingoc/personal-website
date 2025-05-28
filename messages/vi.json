@@ -298,8 +298,10 @@
     "contribution": "Đóng góp",
     "roles": "Vai trò",
     "resources": "Tài nguyên",
-    "gallery": "Thư viện",
-    "viewProjectDetail": "Xem chi tiết dự án"
+    "mobileAppPreview": "Xem trước ứng dụng di động",
+    "webPreview": "Xem trước website",
+    "viewProjectDetail": "Xem chi tiết dự án",
+    "percentage": "Phần trăm"
   },
   "Posts": {
     "search": {

@@ -17,7 +17,7 @@ const ProjectNavigation = ({
     <div className="flex items-center justify-between">
       {prevProject && (
         <Link
-          href={`portfolio/project/${prevProject.id}`}
+          href={`/portfolio/project/${prevProject.id}`}
           className="font-semibold hover:text-primary/80 flex items-center gap-2"
         >
           <MoveLeft />
@@ -26,7 +26,7 @@ const ProjectNavigation = ({
       )}
       {nextProject && (
         <Link
-          href={`portfolio/project/${nextProject.id}`}
+          href={`/portfolio/project/${nextProject.id}`}
           className="font-semibold hover:text-primary/80 flex items-center gap-2 ml-auto"
         >
           {t("Common.next")}: {nextProject.title}

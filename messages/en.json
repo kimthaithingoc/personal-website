@@ -298,8 +298,10 @@
     "contribution": "Contribution",
     "roles": "Roles",
     "resources": "Resources",
-    "gallery": "Gallery",
-    "viewProjectDetail": "View Project Detail"
+    "mobileAppPreview": "Mobile App Preview",
+    "webPreview": "Web Preview",
+    "viewProjectDetail": "View Project Detail",
+    "percentage": "Percentage"
   },
   "Posts": {
     "search": {

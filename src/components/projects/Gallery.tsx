@@ -7,8 +7,9 @@ interface Props {
   images: string[];
   title: string;
   alt: string;
+  type?: "mobile" | "website";
 }
-const Gallery = ({ images, title, alt }: Props) => {
+const Gallery = ({ images, title, alt, type = "website" }: Props) => {
   const t = useTranslations();
   return (
     images &&
@@ -18,12 +19,17 @@ const Gallery = ({ images, title, alt }: Props) => {
         <div
           className={cn(
             "grid items-center",
-            images.length > 1 && "grid-cols-2 gap-2"
+            images.length > 1 && type === "website"
+              ? "grid-cols-2 gap-2"
+              : images.length > 1 && "sm:grid-cols-3 gap-2 grid-cols-2"
           )}
         >
           {images.map((image, index) => (
             <div
-              className="relative h-36 overflow-hidden sm:h-52 rounded-md"
+              className={cn(
+                "relative overflow-hidden rounded-md",
+                type === "mobile" ? "h-[100vh]" : "h-36 sm:h-52"
+              )}
               key={image + index}
             >
               <Image
