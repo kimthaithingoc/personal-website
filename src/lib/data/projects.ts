@@ -193,7 +193,7 @@ export const projects: IProject[] = [
     ],
     videoThumbnail: "/images/portfolio/project/fams/Demo-Cover.png",
     startTime: "2024-01-01",
-    endTime: "2025-05-17",
+    endTime: "2024-05-17",
     contribution: {
       percentage: 10,
       role: [Role.TeamLead, Role.FrontendDeveloper],
