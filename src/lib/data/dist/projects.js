@@ -110,7 +110,7 @@ exports.projects = [
         solutionOverview: "Allure solves these issues by enabling official brand onboarding for product authenticity, connecting customers with verified consultants for professional services, and providing real-time, interactive shopping experiences via KOL livestreams—delivering a trusted and engaging shopping journey.",
         responsibilities: [
             "Top #1 contributor on GitHub for the Customer Website, Management Dashboard, and Customer Mobile App repositories.",
-            "Developed 70% of the core e-commerce frontend flows, including robust handling for edge cases (e.g., out-of-stock products, inactive listings, invalid cart actions), significantly improving reliability and user experience.",
+            "Developed 70% of the core e-commerce frontend flows, including product browsing, product management, cart management, order processing, and consultant services management, with robust handling for edge cases (e.g., out-of-stock products, inactive listings, invalid cart actions), significantly improving reliability and user experience.",
             "Implemented 85% of the features in the Customer Mobile App using React Native.",
             "Designed 90% of screens and components in Figma, accelerating frontend development by 30%.",
             "Designed technical documentation including Swimlane Diagrams and Screen Flows for better cross-functional collaboration.",
