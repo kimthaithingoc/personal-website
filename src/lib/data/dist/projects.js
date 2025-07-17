@@ -91,7 +91,7 @@ exports.projects = [
                 url: "https://www.figma.com/design/LjKyVNBGdRK5JRsSqz21QZ/Untitled?node-id=0-1&t=zEsGnllQNrWY47KZ-1"
             },
         ],
-        videoDemo: "/images/portfolio/project/allure/Demo.mp4",
+        videoDemo: "https://www.youtube.com/embed/SA9USKp2QHE",
         videoThumbnail: "/images/portfolio/project/allure/Demo-Cover.jpg",
         startTime: "2024-10-06",
         endTime: "2025-05-08",
@@ -274,7 +274,7 @@ exports.projects = [
                 url: "https://drive.google.com/drive/folders/1OV0lMUHi3TGhr0oea6rPonf7_fLMW6vU?usp=sharing"
             },
         ],
-        videoDemo: "/images/portfolio/project/pickle-play/Demo.mp4",
+        videoDemo: "https://www.youtube.com/embed/sfObCpy5VGk",
         videoThumbnail: "/images/portfolio/project/pickle-play/Demo-Cover.png",
         startTime: "2024-05-01",
         endTime: "2024-11-01",
@@ -343,7 +343,7 @@ exports.projects = [
         resources: [
             { type: enum_1.ResourceType.Github, url: "http://github.com/ngockim109/artzy/" },
         ],
-        videoDemo: "/images/portfolio/project/artzy/Demo.mp4",
+        videoDemo: "https://www.youtube.com/embed/91058kOLrQg",
         videoThumbnail: "/images/portfolio/project/artzy/Demo-Cover.png",
         startTime: "2024-05-10",
         endTime: "2024-05-17",

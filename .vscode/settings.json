@@ -1,5 +1,5 @@
 {
-  "i18next.i18nPaths": "/D:/Project/Personal/personal-website/messages",
+  "i18next.i18nPaths": "/D:/Project/Personal/personal-website/messages,/D:/DevProjects/Groups/personal-website/messages",
   "i18n-ally.localesPaths": ["messages", "src/i18n"],
   "i18n-ally.keystyle": "nested",
   "compile-hero.disable-compile-files-on-did-save-code": false

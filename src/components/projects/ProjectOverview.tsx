@@ -1,5 +1,4 @@
 import { IProject } from "@/types/project";
-import { useTranslations } from "next-intl";
 import Image from "next/image";
 import React from "react";
 import ResourceLink from "./ResourceLink";
@@ -10,25 +9,18 @@ interface ProjectDetailProps {
   project: IProject;
 }
 const ProjectOverview = ({ project }: ProjectDetailProps) => {
-  const t = useTranslations();
   return (
     <div>
       {project.videoDemo ? (
-        <video
-          className="w-full aspect-video"
-          controls
-          preload="none"
-          poster={project.videoThumbnail}
-        >
-          <source src={project.videoDemo} type="video/mp4" />
-          {/* <track
-        src="/path/to/captions.vtt"
-        kind="subtitles"
-        srcLang="en"
-        label="English"
-      /> */}
-          {t("Empty.video.description")}
-        </video>
+        <div className="w-full aspect-video">
+          <iframe
+            className="w-full h-full rounded-md"
+            src={project.videoDemo}
+            title={project.title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
       ) : (
         <div className="w-full aspect-video relative">
           <Image
