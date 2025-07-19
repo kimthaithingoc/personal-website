@@ -109,11 +109,10 @@ exports.projects = [
         problemStatement: "Beauty brands face challenges ensuring product authenticity and customer trust in online channels. Customers often struggle to find genuine products and personalized beauty advice. Consultants have limited platforms for exposure, and engagement between customers and brands/KOLs is often impersonal and transactional.",
         solutionOverview: "Allure solves these issues by enabling official brand onboarding for product authenticity, connecting customers with verified consultants for professional services, and providing real-time, interactive shopping experiences via KOL livestreams—delivering a trusted and engaging shopping journey.",
         responsibilities: [
-            "Top #1 contributor on GitHub for the Customer Website, Management Dashboard, and Customer Mobile App repositories.",
-            "Developed 70% of the core e-commerce frontend flows, including product browsing, product management, cart management, order processing, and consultant services management, with robust handling for edge cases (e.g., out-of-stock products, inactive listings, invalid cart actions), significantly improving reliability and user experience.",
-            "Implemented 85% of the features in the Customer Mobile App using React Native.",
+            "Developed 70% of the core e-commerce frontend flows, including product browsing, product management, cart management, order processing, feedback management, and consultant services management, with robust handling for edge cases (e.g., out-of-stock products, inactive listings, invalid cart actions), significantly improving reliability and user experience.",
+            "Implemented 85% of the features include product management, order management in the Customer Mobile App using React Native.",
             "Designed 90% of screens and components in Figma, accelerating frontend development by 30%.",
-            "Designed technical documentation including Swimlane Diagrams and Screen Flows for better cross-functional collaboration.",
+            "Designed technical documentation including Swimlane Diagrams and Screen Flows, Software Requirements Specification for better cross-functional collaboration.",
             "Created test documents and executed manual testing on core e-commerce functionalities to ensure seamless user experience and bug-free release cycles.",
         ],
         features: [
@@ -129,6 +128,194 @@ exports.projects = [
         futurePlans: [
             "Integrate real-time shipping tracking with third-party logistics providers.",
             "Implement AI-based product recommendations and consultation matching.",
+        ]
+    },
+    {
+        id: "cimus",
+        code: "cimus",
+        images: [
+            "/images/portfolio/project/cimus/1.jpg",
+            "/images/portfolio/project/cimus/2.png",
+            "/images/portfolio/project/cimus/3.png",
+            "/images/portfolio/project/cimus/4.png",
+            "/images/portfolio/project/cimus/5.png",
+            "/images/portfolio/project/cimus/6.png",
+            "/images/portfolio/project/cimus/7.png",
+        ],
+        techStack: [
+            {
+                category: enum_1.TechStackCategory.Frontend,
+                tech: [
+                    enum_1.FrontendTech.ReactJs,
+                    enum_1.FrontendTech.Typescript,
+                    enum_1.FrontendTech.ShadCN,
+                    enum_1.FrontendTech.TailwindCSS,
+                    enum_1.FrontendTech.ReactQuery,
+                    enum_1.FrontendTech.Redux,
+                ]
+            },
+            {
+                category: enum_1.TechStackCategory.Backend,
+                tech: [enum_1.BackendTech.NestJS]
+            },
+            {
+                category: enum_1.TechStackCategory.Database,
+                tech: [enum_1.DatabaseTech.MySQL]
+            },
+            {
+                category: enum_1.TechStackCategory.Others,
+                tech: [enum_1.OtherTech.Postman, enum_1.OtherTech.GitHub]
+            },
+        ],
+        platform: [enum_1.ProjectPlatform.WebApp],
+        category: [enum_1.ProjectCategory.InternalTool],
+        resources: [
+            {
+                type: enum_1.ResourceType.Github,
+                url: "https://github.com/ngockim109/crime_investigation_management_system"
+            },
+            {
+                type: enum_1.ResourceType.Document,
+                url: "https://drive.google.com/drive/folders/1tRCr4B5b-2jz4DUcdmzjZdtpkiTIobt3?usp=sharing"
+            },
+            {
+                type: enum_1.ResourceType.Postman,
+                url: "https://mockprojectnhom6.postman.co/workspace/MockProjectNhom6's-Workspace~9f7d878b-b704-449b-8e02-a746bc627077/collection/46454979-e0b46629-f907-4b7f-99fc-685e3bbf5d34?action=share&creator=46454979"
+            },
+        ],
+        videoDemo: "https://www.youtube.com/embed/mRRYz1J9M-Y",
+        videoThumbnail: "/images/portfolio/project/cimus/Demo-Cover.jpg",
+        startTime: "2025-06",
+        endTime: "2025-07",
+        contribution: {
+            percentage: 10,
+            role: [enum_1.Role.FrontendDeveloper, enum_1.Role.UIUXDesigner]
+        },
+        team: [
+            { role: enum_1.Role.FullstackDeveloper, members: 2 },
+            { role: enum_1.Role.FrontendDeveloper, members: 3 },
+            { role: enum_1.Role.BackendDeveloper, members: 5 },
+            { role: enum_1.Role.BusinessAnalyst, members: 1 },
+            { role: enum_1.Role.QAEngineer, members: 1 },
+            { role: enum_1.Role.ProductOwner, members: 1 },
+        ],
+        title: "Crime Investigation Management System in the US",
+        summary: "A centralized web-based system designed to streamline crime reporting, investigation, arrest, prosecution, and correction processes for U.S. law enforcement agencies.",
+        description: "CIMUS (Crime Investigation Management System) is a full-stack web application supporting U.S. law enforcement agencies through every phase of a criminal case. It facilitates efficient crime reporting, evidence management, case assignment, legal document handling, suspect tracking, and more. With a user-friendly interface and real-time data capabilities, the system significantly improves the workflow from crime detection to sentencing and post-release supervision.",
+        problemStatement: "Traditional crime management processes are fragmented, heavily paper-based, and lack real-time synchronization between departments. This leads to delays, data loss, and poor coordination among law enforcement, prosecution, and correctional systems.",
+        solutionOverview: "CIMUS unifies crime management into a secure, centralized platform. It provides modules for reporting, investigation, evidence handling, arrest procedures, legal processing, and corrections. Through robust data tracking, real-time updates, and integration with existing systems, CIMUS enables faster, more accurate case handling while ensuring legal compliance and data security.",
+        responsibilities: [
+            "Developed a full-stack criminal investigation system using React, TypeScript, NestJS, MySQL, and RESTful APIs in an Agile environment.",
+            "Delivered responsive UI and structured frontend code using React Query and Redux Toolkit for real-time report and evidence management.",
+            "Collaborated with cross-functional teams in Agile sprints to design database schemas, ensure business alignment with analysts, and maintain code quality.",
+            "Worked with QA testers to write testable code and improve test coverage using GitHub collaboration workflows.",
+            "Contributed to the architecture and feature planning for the reporting and preliminary investigation modules, ensuring scalability and maintainability.",
+        ],
+        features: [
+            "Online crime reporting module supporting both identified and anonymous reports.",
+            "User-friendly forms for entering incident details, victim/suspect information, and location data.",
+            "Report tracking system allowing law enforcement officers to manage status and assignments.",
+            "Crime scene documentation tools including photo/video uploads and secure cloud storage.",
+            "Evidence intake and tracking system with categorization and status updates.",
+        ],
+        lessonsLearned: [
+            "Collaborating in a cross-functional team revealed the importance of clear communication between frontend and backend roles.",
+            "UI/UX decisions must align with real-world workflows of law enforcement users to ensure adoption.",
+        ],
+        futurePlans: [
+            "Integrate AI-powered data analysis to automatically detect connections between cases and identify crime patterns.",
+            "Expand mobile features for field officers, including offline reporting support.",
+            "Add multilingual support to accommodate diverse user populations.",
+            "Integrate with national criminal databases (e.g., NCIC) and forensic labs for automated syncing.",
+            "Implement facial recognition and license plate scanning integration for suspect identification.",
+        ]
+    },
+    {
+        id: "hako",
+        code: "hako",
+        images: ["/images/portfolio/project/hako/1.png"],
+        mobileImages: [
+            "/images/portfolio/project/hako/2.jpg",
+            "/images/portfolio/project/hako/3.jpg",
+            "/images/portfolio/project/hako/4.jpg",
+            "/images/portfolio/project/hako/5.jpg",
+            "/images/portfolio/project/hako/6.jpg",
+            "/images/portfolio/project/hako/7.jpg",
+            "/images/portfolio/project/hako/8.jpg",
+            "/images/portfolio/project/hako/9.jpg",
+        ],
+        techStack: [
+            {
+                category: enum_1.TechStackCategory.Mobile,
+                tech: [
+                    enum_1.MobileTech.ReactNative,
+                    enum_1.MobileTech.Expo,
+                    enum_1.ThirdPartyTech.FirebaseAuthentication,
+                    enum_1.MobileTech.AsyncStorage,
+                    enum_1.FrontendTech.Zustand,
+                    enum_1.FrontendTech.Typescript,
+                    enum_1.FrontendTech.TailwindCSS,
+                    enum_1.FrontendTech.ReactQuery,
+                    enum_1.MobileTech.Nativewind,
+                ]
+            },
+            {
+                category: enum_1.TechStackCategory.Backend,
+                tech: [enum_1.BackendTech.SpringBoot]
+            },
+            {
+                category: enum_1.TechStackCategory.Database,
+                tech: [enum_1.DatabaseTech.PostgreSQL]
+            },
+            {
+                category: enum_1.TechStackCategory.Others,
+                tech: [enum_1.OtherTech.GitHub]
+            },
+        ],
+        platform: [enum_1.ProjectPlatform.MobileApp],
+        category: [enum_1.ProjectCategory.eCommerce, enum_1.ProjectCategory.POS],
+        resources: [
+            {
+                type: enum_1.ResourceType.Github,
+                url: "https://github.com/HakoTeam/"
+            },
+        ],
+        videoThumbnail: "/images/portfolio/project/hako/Demo-Cover.png",
+        startTime: "2025-06",
+        endTime: "2025-07",
+        contribution: {
+            percentage: 60,
+            role: [enum_1.Role.MobileDeveloper]
+        },
+        team: [
+            { role: enum_1.Role.FrontendDeveloper, members: 1 },
+            { role: enum_1.Role.BackendDeveloper, members: 1 },
+        ],
+        title: "Hako - Retail Inventory & Sales Management App",
+        summary: "Hako is a mobile app helping small retailers manage inventory, sales, and customer data with ease.",
+        description: "A POS and inventory management solution tailored for local shop owners in low-tech regions. Built with a mobile-first approach using Expo React Native and Firebase.",
+        problemStatement: "Local retailers often lack accessible, easy-to-use tools to manage products, stock, and transactions effectively.",
+        solutionOverview: "Hako provides a simple, offline-friendly app for managing products, orders, invoices, and customer debts with onboarding support and subscription-based access.",
+        responsibilities: [
+            "Initiated the product concept and led MVP design, sprint planning, and backlog grooming for a cross-functional team using Agile Scrum, Jira, and GitHub",
+            "Developed and tested core modules including product management, sales transactions, order tracking, and customer handling using Expo React Native, with support for Firebase Authentication and light/dark theme",
+        ],
+        features: [
+            "Login via phone + OTP + password",
+            "Product and inventory management",
+            "Sales and stock-out transactions",
+            "Customer debt tracking",
+            "Trial and Pro subscription flow",
+            "Light/Dark theme support",
+        ],
+        lessonsLearned: [
+            "Importance of lean MVP with user-centric UX in early-stage apps",
+            "Balancing offline-first design with real-time syncing challenges",
+        ],
+        futurePlans: [
+            "Add barcode scanning and QR invoice exports",
+            "Launch merchant dashboard and analytics",
+            "Support multi-store collaboration and role-based access",
         ]
     },
     {
@@ -159,7 +346,7 @@ exports.projects = [
             },
             {
                 category: enum_1.TechStackCategory.Others,
-                tech: [enum_1.OtherTech.Figma, enum_1.OtherTech.Postman, enum_1.OtherTech.GitHub]
+                tech: [enum_1.OtherTech.Figma, enum_1.OtherTech.Postman, enum_1.OtherTech.GitLab]
             },
         ],
         platform: [enum_1.ProjectPlatform.WebApp],
@@ -179,12 +366,13 @@ exports.projects = [
         startTime: "2024-01-01",
         endTime: "2024-05-17",
         contribution: {
-            percentage: 10,
+            percentage: 9,
             role: [enum_1.Role.TeamLead, enum_1.Role.FrontendDeveloper]
         },
         team: [
             { role: enum_1.Role.FrontendDeveloper, members: 8 },
             { role: enum_1.Role.BackendDeveloper, members: 8 },
+            { role: enum_1.Role.ProductOwner, members: 2 },
         ],
         title: "Fresher Academy Management System",
         summary: "FAMS is a web-based platform designed to streamline fresher training management by providing centralized control over students, users, scores, and reservations.",

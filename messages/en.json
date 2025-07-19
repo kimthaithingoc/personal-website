@@ -173,6 +173,66 @@
         "Add a tool submission form and cloud sync.",
         "Enable user ratings or tags for each tool."
       ]
+    },
+    "hako": {
+      "title": "Hako - Retail Inventory & Sales Management App",
+      "summary": "Hako is a mobile app helping small retailers manage inventory, sales, and customer data with ease.",
+      "description": "A POS and inventory management solution tailored for local shop owners in low-tech regions. Built with a mobile-first approach using Expo React Native and Firebase.",
+      "problemStatement": "Local retailers often lack accessible, easy-to-use tools to manage products, stock, and transactions effectively.",
+      "solutionOverview": "Hako provides a simple, offline-friendly app for managing products, orders, invoices, and customer debts with onboarding support and subscription-based access.",
+      "responsibilities": [
+        "Initiated the product concept and led MVP design, sprint planning, and backlog grooming for a cross-functional team using Agile Scrum, Jira, and GitHub",
+        "Developed and tested core modules including product management, sales transactions, order tracking, and customer handling using Expo React Native, with support for Firebase Authentication and light/dark theme"
+      ],
+      "features": [
+        "Login via phone + OTP + password",
+        "Product and inventory management",
+        "Sales and stock-out transactions",
+        "Customer debt tracking",
+        "Trial and Pro subscription flow",
+        "Light/Dark theme support"
+      ],
+      "lessonsLearned": [
+        "Importance of lean MVP with user-centric UX in early-stage apps",
+        "Balancing offline-first design with real-time syncing challenges"
+      ],
+      "futurePlans": [
+        "Add barcode scanning and QR invoice exports",
+        "Launch merchant dashboard and analytics",
+        "Support multi-store collaboration and role-based access"
+      ]
+    },
+    "cimus": {
+      "title": "Crime Investigation Management System in the US",
+      "summary": "A centralized web-based system designed to streamline crime reporting, investigation, arrest, prosecution, and correction processes for U.S. law enforcement agencies.",
+      "description": "CIMUS (Crime Investigation Management System) is a full-stack web application supporting U.S. law enforcement agencies through every phase of a criminal case. It facilitates efficient crime reporting, evidence management, case assignment, legal document handling, suspect tracking, and more. With a user-friendly interface and real-time data capabilities, the system significantly improves the workflow from crime detection to sentencing and post-release supervision.",
+      "problemStatement": "Traditional crime management processes are fragmented, heavily paper-based, and lack real-time synchronization between departments. This leads to delays, data loss, and poor coordination among law enforcement, prosecution, and correctional systems.",
+      "solutionOverview": "CIMUS unifies crime management into a secure, centralized platform. It provides modules for reporting, investigation, evidence handling, arrest procedures, legal processing, and corrections. Through robust data tracking, real-time updates, and integration with existing systems, CIMUS enables faster, more accurate case handling while ensuring legal compliance and data security.",
+      "responsibilities": [
+        "Developed a full-stack criminal investigation system using React, TypeScript, NestJS, MySQL, and RESTful APIs in an Agile environment.",
+        "Delivered responsive UI and structured frontend code using React Query and Redux Toolkit for real-time report and evidence management.",
+        "Collaborated with cross-functional teams in Agile sprints to design database schemas, ensure business alignment with analysts, and maintain code quality.",
+        "Worked with QA testers to write testable code and improve test coverage using GitHub collaboration workflows.",
+        "Contributed to the architecture and feature planning for the reporting and preliminary investigation modules, ensuring scalability and maintainability."
+      ],
+      "features": [
+        "Online crime reporting module supporting both identified and anonymous reports.",
+        "User-friendly forms for entering incident details, victim/suspect information, and location data.",
+        "Report tracking system allowing law enforcement officers to manage status and assignments.",
+        "Crime scene documentation tools including photo/video uploads and secure cloud storage.",
+        "Evidence intake and tracking system with categorization and status updates."
+      ],
+      "lessonsLearned": [
+        "Collaborating in a cross-functional team revealed the importance of clear communication between frontend and backend roles.",
+        "UI/UX decisions must align with real-world workflows of law enforcement users to ensure adoption."
+      ],
+      "futurePlans": [
+        "Integrate AI-powered data analysis to automatically detect connections between cases and identify crime patterns.",
+        "Expand mobile features for field officers, including offline reporting support.",
+        "Add multilingual support to accommodate diverse user populations.",
+        "Integrate with national criminal databases (e.g., NCIC) and forensic labs for automated syncing.",
+        "Implement facial recognition and license plate scanning integration for suspect identification."
+      ]
     }
   },
   "FeaturedProject": {

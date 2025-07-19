@@ -10,6 +10,7 @@ export enum ProjectCategory {
   Education = "Education",
   Finance = "Finance",
   Healthcare = "Healthcare",
+  POS = "POS System",
 }
 
 export enum ProjectPlatform {
@@ -38,6 +39,11 @@ export enum FrontendTech {
   TailwindCSS = "Tailwind CSS",
   Bootstrap = "Bootstrap",
   Typescript = "TypeScript",
+  Javascript = "Javascript",
+  Zustand = "Zustand",
+  Redux = "Redux",
+  ReactQuery = "React Query",
+  ShadCN = "ShadCN UI",
 }
 
 export enum TechStackCategory {
@@ -63,6 +69,12 @@ export enum BackendTech {
 }
 export enum MobileTech {
   ReactNative = "React Native",
+  AsyncStorage = "Async Storage",
+  Nativewind = "Nativewind",
+  Expo = "Expo",
+}
+export enum ThirdPartyTech {
+  FirebaseAuthentication = "Firebase Authentication",
 }
 
 export enum DatabaseTech {
@@ -134,4 +146,5 @@ export enum ResourceType {
   Demo = "Demo",
   Figma = "Figma",
   Document = "Document",
+  Postman = "Postman",
 }

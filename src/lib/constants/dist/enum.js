@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-exports.ResourceType = exports.UrlType = exports.Role = exports.OtherTech = exports.DevOpsTech = exports.DatabaseTech = exports.MobileTech = exports.BackendTech = exports.TechStackCategory = exports.FrontendTech = exports.ProjectPlatform = exports.ProjectCategory = void 0;
+exports.ResourceType = exports.UrlType = exports.Role = exports.OtherTech = exports.DevOpsTech = exports.DatabaseTech = exports.ThirdPartyTech = exports.MobileTech = exports.BackendTech = exports.TechStackCategory = exports.FrontendTech = exports.ProjectPlatform = exports.ProjectCategory = void 0;
 var ProjectCategory;
 (function (ProjectCategory) {
     ProjectCategory["SaaS"] = "SaaS";
@@ -14,6 +14,7 @@ var ProjectCategory;
     ProjectCategory["Education"] = "Education";
     ProjectCategory["Finance"] = "Finance";
     ProjectCategory["Healthcare"] = "Healthcare";
+    ProjectCategory["POS"] = "POS System";
 })(ProjectCategory = exports.ProjectCategory || (exports.ProjectCategory = {}));
 var ProjectPlatform;
 (function (ProjectPlatform) {
@@ -42,6 +43,11 @@ var FrontendTech;
     FrontendTech["TailwindCSS"] = "Tailwind CSS";
     FrontendTech["Bootstrap"] = "Bootstrap";
     FrontendTech["Typescript"] = "TypeScript";
+    FrontendTech["Javascript"] = "Javascript";
+    FrontendTech["Zustand"] = "Zustand";
+    FrontendTech["Redux"] = "Redux";
+    FrontendTech["ReactQuery"] = "React Query";
+    FrontendTech["ShadCN"] = "ShadCN UI";
 })(FrontendTech = exports.FrontendTech || (exports.FrontendTech = {}));
 var TechStackCategory;
 (function (TechStackCategory) {
@@ -68,7 +74,14 @@ var BackendTech;
 var MobileTech;
 (function (MobileTech) {
     MobileTech["ReactNative"] = "React Native";
+    MobileTech["AsyncStorage"] = "Async Storage";
+    MobileTech["Nativewind"] = "Nativewind";
+    MobileTech["Expo"] = "Expo";
 })(MobileTech = exports.MobileTech || (exports.MobileTech = {}));
+var ThirdPartyTech;
+(function (ThirdPartyTech) {
+    ThirdPartyTech["FirebaseAuthentication"] = "Firebase Authentication";
+})(ThirdPartyTech = exports.ThirdPartyTech || (exports.ThirdPartyTech = {}));
 var DatabaseTech;
 (function (DatabaseTech) {
     DatabaseTech["MongoDB"] = "MongoDB";
@@ -140,4 +153,5 @@ var ResourceType;
     ResourceType["Demo"] = "Demo";
     ResourceType["Figma"] = "Figma";
     ResourceType["Document"] = "Document";
+    ResourceType["Postman"] = "Postman";
 })(ResourceType = exports.ResourceType || (exports.ResourceType = {}));

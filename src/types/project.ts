@@ -10,6 +10,7 @@ import {
   ResourceType,
   Role,
   TechStackCategory,
+  ThirdPartyTech,
 } from "@/lib/constants";
 import { IIdentifiable } from "./identifiable";
 
@@ -76,6 +77,7 @@ export interface ITechStack {
     | DevOpsTech
     | DatabaseTech
     | OtherTech
+    | ThirdPartyTech
   )[];
 }
 
