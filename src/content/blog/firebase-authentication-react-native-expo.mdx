@@ -1,0 +1,686 @@
+export const metadata = {
+  title: "Firebase Phone Authentication Setup in a React Native App with Expo",
+  publishDate: "2025-07-10T07:00:00Z",
+  description:
+    "A complete step-by-step guide to implementing Firebase phone authentication (OTP verification) in a React Native app using Expo. Learn how to manage OTP sessions, avoid auto-retrieval and auto-login issues with Firebase, and ensure a secure phone number verification process.",
+  thumbnail: "/images/posts/firebase-authentication-react-native-expo.png",
+  category: "Technology",
+  tags: [
+    "Firebase Phone Authentication",
+    "React Native Expo",
+    "OTP Verification",
+    "Phone Number Verification",
+    "Avoid Auto-Retrieve Firebase",
+    "Disable Auto-Login Firebase",
+    "Firebase Auth React Native",
+    "Expo Firebase Setup",
+    "React Native OTP Input",
+    "Secure Mobile Authentication",
+  ],
+};
+
+# 📱 Firebase Phone Authentication Setup in a React Native App with Expo
+
+This guide outlines the steps to implement **Firebase phone authentication (OTP verification)** in a **React Native** application using **Expo**. The process includes:
+
+- Setting up Firebase dependencies
+- Creating a phone authentication context
+- Integrating it into the app's navigation
+- Configuring environment variables for Firebase
+
+---
+
+## 1. Install Dependencies
+
+Install the required Firebase and other dependencies:
+
+```bash
+npm install @react-native-firebase/app@^22.2.1 @react-native-firebase/auth@^22.2.1
+npm @react-native-async-storage/async-storage@2.1.2 zustand@^5.0.6
+
+```
+
+---
+
+## 2. Implement Phone Authentication Logic
+
+### 2.1 Create `PhoneAuthContext`
+
+Create a context to manage phone authentication state and methods like sending/validating OTPs and error handling.
+
+<details>
+<summary>📄 <strong>PhoneAuthContext.tsx</strong> (click to expand)</summary>
+
+```tsx
+// PhoneAuthContext.tsx
+import { storageKeys } from "@/constants/storage";
+import { strings } from "@/constants/strings";
+import {
+  getStorageItem,
+  removeStorageItem,
+  setStorageItem,
+} from "@/services/storage";
+import { formatPhoneNumber } from "@/utils/phone";
+import { showErrorToast, showSuccessToast } from "@/utils/toast";
+import {
+  deleteUser,
+  getAuth,
+  PhoneAuthProvider,
+  signInWithCredential,
+  signOut,
+  verifyPhoneNumber,
+} from "@react-native-firebase/auth";
+import React, { createContext, ReactNode, useContext, useState } from "react";
+
+interface PhoneAuthContextType {
+  // State
+  isLoading: boolean;
+  error: string | null;
+  phoneNumber: string;
+
+  // Methods
+  sendOTP: (phoneNumber: string) => Promise<boolean>;
+  verifyOTP: (
+    otp: string
+  ) => Promise<{ verified: boolean; phoneNumber?: string }>;
+  resendOTP: () => Promise<boolean>;
+  clearOTPSession: () => void;
+  clearError: () => void;
+}
+
+const PhoneAuthContext = createContext<PhoneAuthContextType | undefined>(
+  undefined
+);
+
+interface PhoneAuthenticationProps {
+  children: ReactNode;
+}
+
+export const PhoneAuthenticationProvider: React.FC<
+  PhoneAuthenticationProps
+> = ({ children }) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [phoneNumber, setPhoneNumber] = useState("");
+
+  // Handle common firebase auth error
+  const handleAuthError = (error: any) => {
+    let errorMessage = "";
+
+    switch (error.code) {
+      case "auth/invalid-phone-number":
+        errorMessage = strings.alertAuthInvalidPhoneNumber;
+        break;
+      case "auth/too-many-requests":
+        errorMessage = strings.tooManyRequests;
+        break;
+      case "auth/invalid-verification-code":
+        errorMessage = strings.invalidOtp;
+        break;
+      case "auth/code-expired":
+        errorMessage = strings.otpExpired;
+        removeStorageItem(storageKeys.activeOTPSession);
+        break;
+      case "auth/missing-verification-code":
+        errorMessage = strings.enterValidOtp;
+        break;
+      case "auth/session-expired":
+        errorMessage = strings.otpExpired;
+        removeStorageItem(storageKeys.activeOTPSession);
+        break;
+      default:
+        errorMessage = error.message || strings.genericError;
+    }
+
+    showErrorToast(errorMessage);
+    setError(errorMessage);
+  };
+
+  const sendOTP = async (phoneNumber: string): Promise<boolean> => {
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      // Accepts phoneNumber in any format; so must format to include country code (e.g., +84 for Vietnam)
+      const formattedPhone = formatPhoneNumber(phoneNumber);
+
+      const auth = getAuth();
+
+      // Ensure a clean session by signing out any current user
+      if (auth.currentUser) {
+        await signOut(auth);
+      }
+
+      // Clear any previous verification data
+      removeStorageItem(storageKeys.verificationId);
+      removeStorageItem(storageKeys.activeOTPSession);
+
+      // Send OTP using verifyPhoneNumber to avoid auto-retrieval and ensure manual code entry
+      const confirmationResult = await verifyPhoneNumber(
+        auth,
+        formattedPhone,
+        60
+      );
+
+      if (!confirmationResult) {
+        showErrorToast(strings.alertAuthInvalidPhoneNumber);
+        setIsLoading(false);
+        return false;
+      }
+
+      // Extract verification ID from confirmation result
+      const verificationId = confirmationResult.verificationId;
+
+      if (!verificationId) {
+        throw new Error(strings.errorSendOTP);
+      }
+
+      // Store verification data
+      setStorageItem(storageKeys.verificationId, verificationId);
+      setPhoneNumber(formattedPhone);
+      setStorageItem(storageKeys.activeOTPSession, "true");
+
+      setIsLoading(false);
+      showSuccessToast(strings.otpSent);
+      return true;
+    } catch (error: any) {
+      handleAuthError(error);
+      setIsLoading(false);
+      return false;
+    }
+  };
+
+  const verifyOTP = async (
+    otp: string
+  ): Promise<{ verified: boolean; phoneNumber?: string }> => {
+    // Get verificationId from storage and check if exits
+    const verificationId = await getStorageItem(storageKeys.verificationId);
+
+    if (!verificationId) {
+      showErrorToast(strings.noOtpSession);
+      return { verified: false };
+    }
+
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      // Create phone credential using verification ID and OTP
+      const phoneCredential = PhoneAuthProvider.credential(verificationId, otp);
+
+      // Sign in with the credential to verify it
+      const auth = getAuth();
+      const result = await signInWithCredential(auth, phoneCredential);
+
+      if (result && result.user) {
+        // Store the verified phone number
+        const verifiedPhoneNumber = result.user.phoneNumber || phoneNumber;
+
+        // Immediately delete the user since we only want to verify the phone number
+        await deleteUser(result.user);
+
+        // Clear OTP session
+        removeStorageItem(storageKeys.verificationId);
+        removeStorageItem(storageKeys.activeOTPSession);
+
+        setIsLoading(false);
+        showSuccessToast(strings.otpVerified);
+
+        return {
+          verified: true,
+          phoneNumber: verifiedPhoneNumber,
+        };
+      }
+
+      setIsLoading(false);
+      return { verified: false };
+    } catch (error: any) {
+      handleAuthError(error);
+      setIsLoading(false);
+      return { verified: false };
+    }
+  };
+
+  const resendOTP = async (): Promise<boolean> => {
+    if (!phoneNumber) {
+      showErrorToast(strings.noPhoneNumber);
+      return false;
+    }
+
+    return await sendOTP(phoneNumber);
+  };
+
+  const clearOTPSession = () => {
+    removeStorageItem(storageKeys.verificationId);
+    removeStorageItem(storageKeys.activeOTPSession);
+    setPhoneNumber("");
+    setError(null);
+  };
+
+  const clearError = () => {
+    setError(null);
+  };
+
+  const value: PhoneAuthContextType = {
+    isLoading,
+    error,
+    phoneNumber,
+    sendOTP,
+    verifyOTP,
+    resendOTP,
+    clearOTPSession,
+    clearError,
+  };
+
+  return (
+    <PhoneAuthContext.Provider value={value}>
+      {children}
+    </PhoneAuthContext.Provider>
+  );
+};
+
+export const usePhoneAuth = (): PhoneAuthContextType => {
+  const context = useContext(PhoneAuthContext);
+  if (!context) {
+    throw new Error("usePhoneAuth must be used within a PhoneAuthProvider");
+  }
+  return context;
+};
+```
+
+</details>
+
+---
+
+### 2.2 Wrap Layout with `PhoneAuthenticationProvider`
+
+Wrap your app’s auth layout to provide phone authentication context to all child screens.
+
+```tsx
+// app/(auth)/_layout.tsx
+import { PhoneAuthenticationProvider } from "@/contexts/PhoneAuthContext";
+import { Stack } from "expo-router";
+
+export default function AuthLayout() {
+  return (
+    <PhoneAuthenticationProvider>
+      <Stack
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Stack.Screen name="onboarding" />
+        <Stack.Screen name="phone-input" />
+        <Stack.Screen name="otp-verify" />
+        <Stack.Screen name="password" />
+      </Stack>
+    </PhoneAuthenticationProvider>
+  );
+}
+```
+
+---
+
+### 2.3 Create Screen Components
+
+#### 2.3.1 `PhoneInputScreen`
+
+Handles phone input and initiates the OTP sending process.
+
+<details>
+<summary>📄 <strong>PhoneInputScreen.tsx</strong> (click to expand)</summary>
+
+```tsx
+// PhoneInputScreen.tsx
+export default function PhoneInputScreen() {
+  const router = useRouter();
+  const { setPhoneNumber } = useAuthSession();
+  const [phone, setPhone] = useState("");
+  const { sendOTP, isLoading: loading, clearError } = usePhoneAuth();
+
+  useEffect(() => {
+    clearError();
+  }, []);
+
+  const handleContinue = async () => {
+    if (!phone.trim()) {
+      showErrorToast(strings.alertMissingPhoneNumber);
+      return;
+    }
+
+    if (!validatePhoneNumber(phone)) {
+      showErrorToast(strings.alertInvalidPhoneNumber);
+      return;
+    }
+
+    const success = await sendOTP(phone);
+    if (success) {
+      setPhoneNumber(phone);
+      router.push("/(auth)/otp-verify");
+    }
+  };
+
+  return (
+    <ThemedView color="background" className="flex-1 px-6 justify-center">
+      <ThemedView className="mb-8">
+        <ThemedText type="title" className="text-center mb-4">
+          {strings.phoneInputTitle}
+        </ThemedText>
+        <ThemedText color="muted-foreground" className="text-center">
+          {strings.phoneInputSubtitle}
+        </ThemedText>
+      </ThemedView>
+
+      <ThemedView className="mb-8">
+        <ThemedText type="defaultSemiBold" className="mb-2">
+          {strings.phoneInputLabel}
+        </ThemedText>
+        <ThemedTextInput
+          placeholder={strings.phoneInputPlaceholder}
+          value={phone}
+          onChangeText={setPhone}
+          keyboardType="phone-pad"
+          autoComplete="tel"
+        />
+      </ThemedView>
+
+      <ThemedView className="space-y-4">
+        <ThemedButton
+          title={strings.phoneInputButtonContinue}
+          onPress={handleContinue}
+          loading={loading}
+          size="lg"
+        />
+      </ThemedView>
+    </ThemedView>
+  );
+}
+```
+
+</details>
+
+---
+
+#### 2.3.2 `OTPScreen`
+
+Handles OTP input, auto-focus, verify, and resend OTP logic.
+
+<details>
+<summary>📄 <strong>OTPScreen.tsx</strong> (click to expand)</summary>
+
+```tsx
+// OTPScreen.tsx
+import GoBackButton from "@/components/base/GoBackButton";
+import { ThemedButton } from "@/components/base/ThemedButton";
+import { ThemedText } from "@/components/base/ThemedText";
+import { ThemedView } from "@/components/base/ThemedView";
+import { storageKeys } from "@/constants/storage";
+import { strings } from "@/constants/strings";
+import { usePhoneAuth } from "@/contexts/PhoneAuthContext";
+import { getStorageItem } from "@/services/storage";
+import { useAuthSession } from "@/stores/auth";
+import { showErrorToast } from "@/utils/toast";
+import { useRouter } from "expo-router";
+import { useEffect, useRef, useState } from "react";
+import { TextInput } from "react-native";
+
+export default function OTPScreen() {
+  const router = useRouter();
+  const { phoneNumber } = useAuthSession();
+  const [otp, setOtp] = useState(["", "", "", "", "", ""]);
+  const [resendTimer, setResendTimer] = useState(60);
+  const [isVerifying, setIsVerifying] = useState(false);
+  const inputRefs = useRef<(TextInput | null)[]>([]);
+  const {
+    verifyOTP,
+    resendOTP,
+    isLoading: loading,
+    clearError,
+  } = usePhoneAuth();
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setResendTimer((prev) => (prev > 0 ? prev - 1 : 0));
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    clearError();
+  }, []);
+
+  // Redirect to screen input phone number if no active OTP session
+  useEffect(() => {
+    async function checkOTPSession() {
+      const activeOTPSession = await getStorageItem(
+        storageKeys.activeOTPSession
+      );
+
+      const checkSession = activeOTPSession === "true";
+      if (!checkSession) {
+        router.push("/(auth)/phone-input");
+      }
+    }
+    checkOTPSession();
+  }, [router]);
+
+  const handleOtpChange = (value: string, index: number) => {
+    if (value.length > 1) return;
+
+    const newOtp = [...otp];
+    newOtp[index] = value;
+    setOtp(newOtp);
+
+    // Auto-focus next input
+    if (value && index < 5) {
+      inputRefs.current[index + 1]?.focus();
+    }
+  };
+
+  const handleKeyPress = (key: string, index: number) => {
+    if (key === "Backspace" && !otp[index] && index > 0) {
+      inputRefs.current[index - 1]?.focus();
+    }
+  };
+
+  const handleVerify = async () => {
+    if (isVerifying) return; // Prevent multiple simultaneous verifications
+
+    const otpString = otp.join("");
+    if (otpString.length !== 6) {
+      showErrorToast(strings.enterValidOtp);
+      return;
+    }
+
+    setIsVerifying(true);
+
+    try {
+      const { verified } = await verifyOTP(otpString);
+
+      if (verified) {
+        router.push("/(auth)/password");
+      }
+    } catch (error) {
+      showErrorToast(strings.genericError);
+    } finally {
+      setIsVerifying(false);
+    }
+  };
+
+  const handleResend = async () => {
+    if (resendTimer > 0) return;
+
+    const success = await resendOTP();
+    if (success) {
+      setResendTimer(60);
+      setOtp(["", "", "", "", "", ""]);
+      setIsVerifying(false);
+      inputRefs.current[0]?.focus();
+    }
+  };
+
+  const handlePaste = (pastedText: string) => {
+    const cleanedText = pastedText.replace(/\D/g, ""); // Remove non-digits
+    if (cleanedText.length === 6) {
+      const otpArray = cleanedText.split("");
+      setOtp(otpArray);
+      return true;
+    }
+    return false;
+  };
+
+  return (
+    <ThemedView color="background" className="flex-1 px-6 justify-center">
+      <GoBackButton />
+      <ThemedView className="mb-8">
+        <ThemedText type="title" className="text-center mb-4">
+          {strings.otpTitle}
+        </ThemedText>
+        <ThemedText color="muted-foreground" className="text-center">
+          {strings.otpSubtitle} {phoneNumber}
+        </ThemedText>
+      </ThemedView>
+
+      <ThemedView className="mb-8">
+        <ThemedText type="defaultSemiBold" className="mb-4 text-center">
+          {strings.otpInputLabel}
+        </ThemedText>
+
+        <ThemedView className="flex-row justify-center space-x-3 gap-3">
+          {otp.map((digit, index) => (
+            <TextInput
+              key={index}
+              ref={(ref) => {
+                inputRefs.current[index] = ref;
+              }}
+              className="w-12 border border-border rounded-lg text-center text-lg font-semibold text-foreground"
+              value={digit}
+              onChangeText={(value) => {
+                if (value.length > 1) {
+                  if (handlePaste(value)) {
+                    return;
+                  }
+                }
+                handleOtpChange(value, index);
+              }}
+              onKeyPress={({ nativeEvent }) =>
+                handleKeyPress(nativeEvent.key, index)
+              }
+              keyboardType="numeric"
+              maxLength={1}
+              selectTextOnFocus
+            />
+          ))}
+        </ThemedView>
+      </ThemedView>
+
+      <ThemedView className="gap-3">
+        <ThemedButton
+          title={strings.otpContinue}
+          onPress={handleVerify}
+          loading={loading || isVerifying}
+          size="lg"
+        />
+
+        <ThemedView className="flex-row justify-between items-center">
+          <ThemedText color="muted-foreground">
+            {strings.noReceivedOtp}
+          </ThemedText>
+          <ThemedButton
+            title={
+              resendTimer > 0
+                ? `${strings.otpResendIn} ${resendTimer}s`
+                : strings.otpResend
+            }
+            variant="outline"
+            onPress={handleResend}
+            disabled={resendTimer > 0}
+            className="p-0 bg-transparent border-0"
+          />
+        </ThemedView>
+      </ThemedView>
+    </ThemedView>
+  );
+}
+```
+
+</details>
+
+---
+
+## 3. Configure Environment Variables
+
+### 3.1 Add `GOOGLE_SERVICES_JSON`
+
+**Option 1: Expo dashboard**
+
+- Go to:
+  `https://expo.dev/accounts/<your-username>/projects/<project-name>/environment-variables`
+- Add a variable:
+
+  - Name: `GOOGLE_SERVICES_JSON`
+  - Value: your `google-services.json` file
+  - Type: **File**
+  - Scope: **Project**
+  - Visibility: **Secret**
+  - Environments: **development**, **preview**, **production**
+
+**Option 2: Terminal**
+
+```bash
+eas env:create --scope project --name GOOGLE_SERVICES_JSON --type file --value ./google-services.json
+```
+
+---
+
+### 3.2 Pull Environment Variables
+
+```bash
+eas env:pull --environment development
+```
+
+---
+
+### 3.3 Update `app.json` → `app.config.js`
+
+Rename `app.json` to `app.config.js` and set Firebase plugins.
+
+```js
+// app.config.js
+export default {
+  expo: {
+    android: {
+      googleServicesFile: process.env.GOOGLE_SERVICES_JSON,
+    },
+    plugins: [
+      "expo-router",
+      "@react-native-firebase/app",
+      "@react-native-firebase/auth",
+    ],
+  },
+};
+```
+
+---
+
+### 3.4 Build the App
+
+Build Android app for production:
+
+```bash
+eas build -p android --profile production
+```
+
+---
+
+## ✅ Summary
+
+This guide covers the **full implementation of Firebase Phone Authentication** in an Expo-managed React Native project:
+
+- 🔧 Installed Firebase and state dependencies
+- 📦 Set up `PhoneAuthContext` with OTP methods and error handling
+- 💡 Integrated context provider into navigation layout
+- 📱 Created screens for phone input and OTP verification
+- 🔐 Configured environment variables for secure Firebase auth
+- 🚀 Built production-ready APK with `eas build`

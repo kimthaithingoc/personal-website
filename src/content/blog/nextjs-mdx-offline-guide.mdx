@@ -1,0 +1,167 @@
+export const metadata = {
+  title:
+    "How to Use MDX Locally in Next.js (App Router) – Offline Integration Guide",
+  publishDate: "2025-06-08T07:00:00Z",
+  description:
+    "Learn how to use MDX locally in Next.js with the App Router. This guide walks you through loading .mdx files without a CMS, setting up dynamic routes, and rendering markdown content using custom React components — fully offline and SEO-friendly.",
+  thumbnail: "/images/posts/nextjs-mdx-offline-guide.png",
+  category: "Technology",
+  tags: [
+    "Next.js App Router",
+    "MDX Integration",
+    "Static Site Generation",
+    "Offline Blog Setup",
+    "React Markdown",
+    "Custom MDX Components",
+    "Dynamic Routes in Next.js",
+    "Content without CMS",
+    "MDX Loader",
+    "MDX with React",
+  ],
+};
+
+# 📝 How to Use MDX Locally in Next.js (App Router) – Offline Integration Guide
+
+In this post, I’ll guide you step by step on how to **integrate MDX in your Next.js project (App Router)** to load `.mdx` files from your local source code — without needing a CMS or external content service.
+
+This setup is ideal for **offline blogs**, **documentation pages**, or any markdown-based content that needs to work with **React components**.
+
+> ✅ Tech Stack Used:
+>
+> - `@next/mdx`
+> - `@mdx-js/loader`
+> - `@mdx-js/react`
+> - `@types/mdx`
+
+---
+
+## 🔧 1. Install Required Packages
+
+To get started, install the necessary MDX dependencies:
+
+```bash
+npm install @next/mdx @mdx-js/loader @mdx-js/react @types/mdx
+
+```
+
+---
+
+## ⚙️ 2. Configure MDX in `next.config.mjs`
+
+Next, configure MDX in your Next.js config file.
+
+> 💡 If you’re not using next-intl for localization, you can skip the withNextIntl wrapper.
+
+```
+import type { NextConfig } from "next";
+import createMDX from "@next/mdx";
+import createNextIntlPlugin from "next-intl/plugin";
+
+const nextConfig: NextConfig = {
+  // Enable MDX and Markdown support in page extensions
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
+};
+
+const withMDX = createMDX({});
+const withNextIntl = createNextIntlPlugin();
+
+export default withNextIntl(withMDX(nextConfig));
+
+```
+
+---
+
+## 🧩 3. Create MDX Components
+
+You can customize how MDX content renders by overriding components. For example, let’s replace all `<img>` tags with Next.js `<Image>`:
+
+```tsx
+// mdx-components.tsx
+import type { MDXComponents } from "mdx/types";
+import Image, { ImageProps } from "next/image";
+
+export function useMDXComponents(components: MDXComponents): MDXComponents {
+  return {
+    img: (props) => (
+      <Image
+        style={{ width: "100%", height: "auto" }}
+        {...(props as ImageProps)}
+        alt={props.alt}
+      />
+    ),
+    ...components,
+  };
+}
+```
+
+> 🛠️ Place this file in your project root or inside src/.
+
+---
+
+## 📁 4. Recommended Folder Structure
+
+Organize your project folders for better scalability:
+
+```
+app/
+  blog/
+    [slug]/
+      page.tsx       # Renders the MDX post
+content/
+  welcome.mdx        # MDX content
+  about.mdx
+mdx-components.ts    # Custom MDX component rendering
+package.json
+
+```
+
+---
+
+## 📄 5. Load MDX Posts Dynamically
+
+Create the dynamic route `[slug]` to display your offline MDX posts:
+
+```tsx
+// app/blog/[slug]/page.tsx
+
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const { default: Post } = await import(`@/content/${slug}.mdx`);
+
+  return <Post />;
+}
+
+// Static generation
+export function generateStaticParams() {
+  return [{ slug: "welcome" }, { slug: "about" }];
+}
+
+export const dynamicParams = false;
+```
+
+---
+
+## 🚀 Benefits of This Setup
+
+- ✅ **Offline-ready**: No external CMS or API
+- ✅ **Static generation**: Fast and SEO-friendly
+- ✅ **Flexible customization** with React components
+- ✅ **Great for technical blogs or documentation**
+
+---
+
+## 📚 References
+
+- [MDX with Next.js – Official Docs](https://nextjs.org/docs/app/building-your-application/configuring/mdx)
+
+---
+
+## 💡 Final Thoughts
+
+This setup allows you to **build a full-featured blog or documentation site** using `.mdx` files in Next.js App Router — 100% offline. It’s a perfect balance of markdown simplicity and React component power.
+
+If you want a **starter template**, just let me know — I can help you scaffold it instantly.
