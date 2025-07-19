@@ -281,8 +281,7 @@ exports.projects = [
             },
         ],
         videoThumbnail: "/images/portfolio/project/hako/Demo-Cover.png",
-        startTime: "2025-06",
-        endTime: "2025-07",
+        startTime: "2025-06-13",
         contribution: {
             percentage: 60,
             role: [enum_1.Role.MobileDeveloper]
@@ -346,7 +345,12 @@ exports.projects = [
             },
             {
                 category: enum_1.TechStackCategory.Others,
-                tech: [enum_1.OtherTech.Figma, enum_1.OtherTech.Postman, enum_1.OtherTech.GitLab]
+                tech: [
+                    enum_1.OtherTech.Figma,
+                    enum_1.OtherTech.Postman,
+                    enum_1.OtherTech.GitLab,
+                    enum_1.OtherTech.GitLabCI,
+                ]
             },
         ],
         platform: [enum_1.ProjectPlatform.WebApp],
@@ -372,7 +376,7 @@ exports.projects = [
         team: [
             { role: enum_1.Role.FrontendDeveloper, members: 8 },
             { role: enum_1.Role.BackendDeveloper, members: 8 },
-            { role: enum_1.Role.ProductOwner, members: 2 },
+            { role: enum_1.Role.ProductOwner, members: 1 },
         ],
         title: "Fresher Academy Management System",
         summary: "FAMS is a web-based platform designed to streamline fresher training management by providing centralized control over students, users, scores, and reservations.",
@@ -388,7 +392,7 @@ exports.projects = [
         ],
         features: [
             "Student management: add, edit, delete, import/export, search, and status updates.",
-            "Reserved list handling: reclass, dropout, remove, remind, and bulk actions.",
+            "Reserved list handling: re-class, dropout, remove, remind, and bulk actions.",
             "Class management: manage student-class assignments and performance scores.",
             "User management: CRUD operations, search, import/export for internal roles.",
             "Score management: import/export student scores, update score entries.",

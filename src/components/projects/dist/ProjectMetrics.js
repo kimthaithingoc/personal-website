@@ -23,15 +23,17 @@ var ProjectMetrics = function (_a) {
                 react_1["default"].createElement("span", null, "-"),
                 react_1["default"].createElement("p", { className: "space-x-1 flex items-center" },
                     react_1["default"].createElement(lucide_react_1.Calendar, { className: "w-4 h-4" }),
-                    react_1["default"].createElement("span", null, t("Date.short", { value: new Date(project.endTime) }, {
-                        dateTime: {
-                            short: {
-                                day: "numeric",
-                                month: "numeric",
-                                year: "numeric"
+                    react_1["default"].createElement("span", null, project.endTime
+                        ? t("Date.short", { value: new Date(project.endTime) }, {
+                            dateTime: {
+                                short: {
+                                    day: "numeric",
+                                    month: "numeric",
+                                    year: "numeric"
+                                }
                             }
-                        }
-                    }))))),
+                        })
+                        : "Present")))),
         react_1["default"].createElement("span", { className: "text-muted-foreground font-semibold" }, t("ProjectDetail.categories")),
         react_1["default"].createElement("div", { className: "space-x-1" }, project.category.map(function (category) { return (react_1["default"].createElement(badge_1.Badge, { variant: "secondary", key: category }, category)); })),
         react_1["default"].createElement("div", { className: "space-y-2" },

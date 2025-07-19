@@ -105,6 +105,7 @@ export enum OtherTech {
   Git = "Git",
   GitHub = "GitHub",
   GitLab = "GitLab",
+  GitLabCI = "GitLab CI",
   Figma = "Figma",
   Postman = "Postman",
   Jira = "Jira",

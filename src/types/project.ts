@@ -24,7 +24,7 @@ export interface IProjectCore extends IIdentifiable {
   category: ProjectCategory[];
   resources?: IResource[];
   startTime: string;
-  endTime: string;
+  endTime?: string;
   metrics?: {
     users: IUserMetric[];
     retentionRate?: number;

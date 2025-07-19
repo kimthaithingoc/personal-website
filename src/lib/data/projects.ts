@@ -302,8 +302,7 @@ export const projects: IProject[] = [
       },
     ],
     videoThumbnail: "/images/portfolio/project/hako/Demo-Cover.png",
-    startTime: "2025-06",
-    endTime: "2025-07",
+    startTime: "2025-06-13",
     contribution: {
       percentage: 60,
       role: [Role.MobileDeveloper],
@@ -372,7 +371,12 @@ export const projects: IProject[] = [
       },
       {
         category: TechStackCategory.Others,
-        tech: [OtherTech.Figma, OtherTech.Postman, OtherTech.GitLab],
+        tech: [
+          OtherTech.Figma,
+          OtherTech.Postman,
+          OtherTech.GitLab,
+          OtherTech.GitLabCI,
+        ],
       },
     ],
     platform: [ProjectPlatform.WebApp],
@@ -398,7 +402,7 @@ export const projects: IProject[] = [
     team: [
       { role: Role.FrontendDeveloper, members: 8 },
       { role: Role.BackendDeveloper, members: 8 },
-      { role: Role.ProductOwner, members: 2 },
+      { role: Role.ProductOwner, members: 1 },
     ],
     title: "Fresher Academy Management System",
     summary:
@@ -418,7 +422,7 @@ export const projects: IProject[] = [
     ],
     features: [
       "Student management: add, edit, delete, import/export, search, and status updates.",
-      "Reserved list handling: reclass, dropout, remove, remind, and bulk actions.",
+      "Reserved list handling: re-class, dropout, remove, remind, and bulk actions.",
       "Class management: manage student-class assignments and performance scores.",
       "User management: CRUD operations, search, import/export for internal roles.",
       "Score management: import/export student scores, update score entries.",

@@ -34,19 +34,21 @@ const ProjectMetrics = ({ project }: ProjectDetailProps) => {
           <p className="space-x-1 flex items-center">
             <Calendar className="w-4 h-4" />
             <span>
-              {t(
-                "Date.short",
-                { value: new Date(project.endTime) },
-                {
-                  dateTime: {
-                    short: {
-                      day: "numeric",
-                      month: "numeric",
-                      year: "numeric",
-                    },
-                  },
-                }
-              )}
+              {project.endTime
+                ? t(
+                    "Date.short",
+                    { value: new Date(project.endTime) },
+                    {
+                      dateTime: {
+                        short: {
+                          day: "numeric",
+                          month: "numeric",
+                          year: "numeric",
+                        },
+                      },
+                    }
+                  )
+                : "Present"}
             </span>
           </p>
         </p>

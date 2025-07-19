@@ -64,16 +64,15 @@
     "allure": {
       "title": "Allure",
       "summary": "Allure là nền tảng thương mại điện tử dành cho sản phẩm làm đẹp chính hãng, kết nối khách hàng với các thương hiệu chính thức, livestream của KOL và các chuyên gia tư vấn sắc đẹp.",
-      "description": "Allure là giải pháp thương mại điện tử toàn diện dành riêng cho ngành công nghiệp làm đẹp. Nền tảng này cho phép các thương hiệu chính hãng đăng ký, quản lý sản phẩm (bao gồm giảm giá nhanh, đặt trước, mua theo nhóm) và bán hàng trực tiếp đến khách hàng. Hệ thống cũng hỗ trợ các chuyên gia tư vấn làm đẹp cung cấp dịch vụ tư vấn cá nhân hóa và KOL tổ chức các sự kiện bán hàng trực tiếp. Hệ sinh thái bao gồm website và ứng dụng cho khách hàng, bảng điều khiển quản lý cho admin, nhà vận hành, thương hiệu, chuyên gia tư vấn, và giao diện riêng cho KOL.",
+      "description": "Allure là một giải pháp thương mại điện tử end-to-end dành riêng cho ngành công nghiệp làm đẹp. Nền tảng cho phép các thương hiệu mỹ phẩm chính thức đăng ký, quản lý danh sách sản phẩm (bao gồm khuyến mãi chớp nhoáng, đặt hàng trước, và mua theo nhóm), và bán trực tiếp đến khách hàng. Hệ thống cũng tích hợp tính năng cho các chuyên gia tư vấn làm đẹp cung cấp dịch vụ tư vấn trang điểm cá nhân hóa, và cho các KOL tổ chức các buổi livestream bán hàng. Nền tảng bao gồm website và ứng dụng dành cho khách hàng, bảng điều khiển quản lý dành cho quản trị viên, nhân viên vận hành, thương hiệu, tư vấn viên, cũng như ứng dụng riêng cho KOL.",
       "problemStatement": "Các thương hiệu làm đẹp gặp khó khăn trong việc đảm bảo tính xác thực của sản phẩm và xây dựng lòng tin với khách hàng trên các kênh trực tuyến. Khách hàng thì khó tìm sản phẩm chính hãng và tư vấn phù hợp. Chuyên gia tư vấn thiếu nền tảng để tiếp cận khách hàng, và sự tương tác giữa khách hàng và thương hiệu/KOL thường thiếu sự cá nhân hóa.",
       "solutionOverview": "Allure giải quyết những vấn đề trên bằng cách cho phép thương hiệu chính thức đăng ký để xác thực sản phẩm, kết nối khách hàng với chuyên gia tư vấn được xác minh, và mang lại trải nghiệm mua sắm tương tác, thời gian thực qua livestream của KOL—mang đến hành trình mua sắm đáng tin cậy và thú vị.",
       "responsibilities": [
-        "Top #1 contributor trên GitHub cho các repo Website Khách hàng, Bảng điều khiển quản lý và Ứng dụng di động khách hàng.",
-        "Phát triển 70% luồng chính của frontend thương mại điện tử, xử lý tốt các trường hợp ngoại lệ (hết hàng, sản phẩm không hoạt động, hành động giỏ hàng không hợp lệ), giúp nâng cao độ tin cậy và trải nghiệm người dùng.",
-        "Triển khai 85% chức năng trong Ứng dụng di động bằng React Native.",
-        "Dẫn dắt thiết kế UI/UX trong sprint đầu tiên, tạo bản thiết kế Figma giúp tăng tốc phát triển frontend 30%.",
-        "Thiết kế tài liệu kỹ thuật bao gồm Swimlane Diagram và Screen Flow để hỗ trợ hợp tác đa phòng ban.",
-        "Tạo kế hoạch kiểm thử và thực hiện kiểm thử thủ công các chức năng chính nhằm đảm bảo trải nghiệm liền mạch và chu kỳ phát hành không lỗi."
+        "Phát triển 70% các luồng frontend cốt lõi cho thương mại điện tử bao gồm duyệt sản phẩm, quản lý sản phẩm, quản lý giỏ hàng, xử lý đơn hàng, quản lý phản hồi và quản lý dịch vụ tư vấn, với xử lý mạnh mẽ cho các tình huống biên (ví dụ: hết hàng, sản phẩm không còn hiệu lực, hành động giỏ hàng không hợp lệ), giúp cải thiện đáng kể độ tin cậy và trải nghiệm người dùng.",
+        "Triển khai 85% các tính năng như quản lý sản phẩm, quản lý đơn hàng trong ứng dụng di động dành cho khách hàng sử dụng React Native.",
+        "Thiết kế 90% các màn hình và thành phần trong Figma, giúp tăng tốc độ phát triển frontend lên 30%.",
+        "Thiết kế tài liệu kỹ thuật bao gồm sơ đồ Swimlane và luồng màn hình, tài liệu đặc tả yêu cầu phần mềm nhằm hỗ trợ hợp tác liên phòng ban hiệu quả hơn.",
+        "Tạo tài liệu kiểm thử và thực hiện kiểm thử thủ công trên các chức năng thương mại điện tử cốt lõi để đảm bảo trải nghiệm người dùng liền mạch và quy trình phát hành không lỗi."
       ],
       "features": [
         "Đăng ký thương hiệu chính thức, quản lý sản phẩm (thường, giảm giá nhanh, đặt trước, mua theo nhóm), theo dõi đơn hàng, cập nhật trạng thái và phân tích doanh số.",
@@ -172,6 +171,66 @@
       "futurePlans": [
         "Thêm form gửi công cụ và đồng bộ đám mây.",
         "Cho phép người dùng đánh giá hoặc gắn thẻ công cụ."
+      ]
+    },
+    "hako": {
+      "title": "Hako - Ứng dụng quản lý tồn kho và bán hàng cho bán lẻ",
+      "summary": "Hako là một ứng dụng di động giúp các nhà bán lẻ nhỏ dễ dàng quản lý hàng tồn kho, doanh số và dữ liệu khách hàng.",
+      "description": "Một giải pháp POS và quản lý tồn kho được thiết kế riêng cho các chủ cửa hàng địa phương ở khu vực công nghệ thấp. Được xây dựng với định hướng ưu tiên thiết bị di động, sử dụng Expo React Native và Firebase.",
+      "problemStatement": "Các nhà bán lẻ địa phương thường thiếu các công cụ dễ tiếp cận và dễ sử dụng để quản lý sản phẩm, hàng tồn kho và giao dịch một cách hiệu quả.",
+      "solutionOverview": "Hako cung cấp một ứng dụng đơn giản, hỗ trợ offline để quản lý sản phẩm, đơn hàng, hóa đơn và công nợ khách hàng, kèm theo hướng dẫn sử dụng và hình thức truy cập dựa trên gói đăng ký.",
+      "responsibilities": [
+        "Khởi xướng ý tưởng sản phẩm và dẫn dắt việc thiết kế MVP, lập kế hoạch sprint và quản lý backlog cho một nhóm đa chức năng sử dụng Agile Scrum, Jira và GitHub.",
+        "Phát triển và kiểm thử các module cốt lõi như quản lý sản phẩm, giao dịch bán hàng, theo dõi đơn hàng và quản lý khách hàng bằng Expo React Native, hỗ trợ Firebase Authentication và chế độ sáng/tối."
+      ],
+      "features": [
+        "Đăng nhập bằng số điện thoại + OTP + mật khẩu",
+        "Quản lý sản phẩm và tồn kho",
+        "Giao dịch bán hàng và xử lý hết hàng",
+        "Theo dõi công nợ khách hàng",
+        "Luồng đăng ký dùng thử và gói Pro",
+        "Hỗ trợ giao diện sáng/tối"
+      ],
+      "lessonsLearned": [
+        "Tầm quan trọng của MVP tinh gọn với UX lấy người dùng làm trung tâm trong giai đoạn đầu của ứng dụng.",
+        "Cân bằng giữa thiết kế ưu tiên offline và thách thức khi đồng bộ thời gian thực."
+      ],
+      "futurePlans": [
+        "Thêm tính năng quét mã vạch và xuất hóa đơn bằng mã QR",
+        "Ra mắt bảng điều khiển phân tích cho người bán",
+        "Hỗ trợ cộng tác đa cửa hàng và phân quyền theo vai trò"
+      ]
+    },
+    "cimus": {
+      "title": "CIMUS - Hệ thống quản lý điều tra tội phạm tại Hoa Kỳ",
+      "summary": "Một hệ thống web tập trung được thiết kế nhằm tinh gọn quá trình báo cáo tội phạm, điều tra, bắt giữ, truy tố và thi hành án cho các cơ quan thực thi pháp luật Hoa Kỳ.",
+      "description": "CIMUS (Crime Investigation Management System) là một ứng dụng web full-stack hỗ trợ các cơ quan thực thi pháp luật Hoa Kỳ trong mọi giai đoạn của một vụ án hình sự. Hệ thống giúp xử lý hiệu quả việc báo cáo tội phạm, quản lý bằng chứng, phân công điều tra, xử lý tài liệu pháp lý, theo dõi nghi phạm và nhiều chức năng khác. Với giao diện thân thiện và khả năng xử lý dữ liệu thời gian thực, hệ thống cải thiện đáng kể quy trình từ phát hiện tội phạm đến thi hành án và giám sát sau phóng thích.",
+      "problemStatement": "Các quy trình quản lý tội phạm truyền thống thường bị phân mảnh, dựa nhiều vào giấy tờ và thiếu đồng bộ thời gian thực giữa các bộ phận, dẫn đến chậm trễ, mất mát dữ liệu và phối hợp kém giữa các đơn vị thực thi pháp luật, truy tố và cải huấn.",
+      "solutionOverview": "CIMUS hợp nhất toàn bộ quy trình xử lý tội phạm vào một nền tảng bảo mật, tập trung. Hệ thống cung cấp các module báo cáo, điều tra, xử lý bằng chứng, bắt giữ, truy tố và cải huấn. Với khả năng theo dõi dữ liệu mạnh mẽ, cập nhật thời gian thực và tích hợp với các hệ thống hiện có, CIMUS giúp xử lý vụ án nhanh hơn, chính xác hơn và tuân thủ pháp lý cao.",
+      "responsibilities": [
+        "Phát triển hệ thống điều tra tội phạm full-stack sử dụng React, TypeScript, NestJS, MySQL và RESTful API trong môi trường Agile.",
+        "Xây dựng UI responsive và mã frontend có cấu trúc, sử dụng React Query và Redux Toolkit để quản lý báo cáo và bằng chứng theo thời gian thực.",
+        "Phối hợp với nhóm đa chức năng trong các sprint Agile để thiết kế cơ sở dữ liệu, đảm bảo yêu cầu từ BA và duy trì chất lượng mã nguồn.",
+        "Làm việc với QA để viết mã có thể kiểm thử và nâng cao độ phủ kiểm thử thông qua quy trình cộng tác trên GitHub.",
+        "Tham gia thiết kế kiến trúc và lập kế hoạch tính năng cho các module báo cáo và điều tra sơ bộ, đảm bảo khả năng mở rộng và dễ bảo trì."
+      ],
+      "features": [
+        "Module báo cáo tội phạm trực tuyến hỗ trợ cả người dùng có danh tính và ẩn danh.",
+        "Biểu mẫu nhập liệu thân thiện để ghi lại thông tin vụ việc, nạn nhân/nghi phạm và vị trí xảy ra.",
+        "Hệ thống theo dõi báo cáo cho phép cảnh sát quản lý trạng thái và phân công xử lý.",
+        "Công cụ ghi nhận hiện trường vụ án với khả năng tải lên ảnh/video và lưu trữ đám mây an toàn.",
+        "Hệ thống tiếp nhận và theo dõi bằng chứng với phân loại và cập nhật trạng thái rõ ràng."
+      ],
+      "lessonsLearned": [
+        "Làm việc trong nhóm đa chức năng giúp nhận ra tầm quan trọng của giao tiếp rõ ràng giữa frontend và backend.",
+        "Các quyết định về UI/UX cần phải phù hợp với quy trình thực tế của người dùng trong ngành công an để đảm bảo khả năng áp dụng thực tế."
+      ],
+      "futurePlans": [
+        "Tích hợp phân tích dữ liệu sử dụng AI để tự động phát hiện mối liên hệ giữa các vụ án và nhận diện hành vi phạm tội.",
+        "Mở rộng tính năng di động cho lực lượng tại hiện trường, bao gồm hỗ trợ báo cáo offline.",
+        "Thêm hỗ trợ đa ngôn ngữ để phục vụ nhiều nhóm dân cư.",
+        "Tích hợp với cơ sở dữ liệu tội phạm quốc gia (ví dụ: NCIC) và phòng xét nghiệm pháp y để tự động đồng bộ dữ liệu.",
+        "Áp dụng nhận diện khuôn mặt và quét biển số xe để hỗ trợ nhận diện nghi phạm."
       ]
     }
   },

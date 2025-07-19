@@ -112,6 +112,7 @@ var OtherTech;
     OtherTech["Git"] = "Git";
     OtherTech["GitHub"] = "GitHub";
     OtherTech["GitLab"] = "GitLab";
+    OtherTech["GitLabCI"] = "GitLab CI";
     OtherTech["Figma"] = "Figma";
     OtherTech["Postman"] = "Postman";
     OtherTech["Jira"] = "Jira";
