@@ -57,8 +57,8 @@ const ExperienceCard = ({
       }}
     >
       {/* Content */}
-      <div className="flex justify-between items-center">
-        <div className="transition-all space-y-3 w-5/6">
+      <div className="flex justify-between items-center gap-2">
+        <div className="transition-all space-y-3 w-4/5">
           <div className="flex items-center gap-3">
             <h3 className="text-xl font-semibold">{experience.position}</h3>
             <div className="flex items-center gap-3">
@@ -76,7 +76,7 @@ const ExperienceCard = ({
               </div>
             </div>
           </div>
-          <ul className="ml-5 list-disc space-y-1 text-gray-600 dark:text-gray-400">
+          <ul className="ml-5 list-disc space-y-1 text-gray-600 dark:text-gray-400 text-justify">
             {experience.description.map((_, i) => (
               <li key={i}>{tExperience(`description.${i}`)}</li>
             ))}
@@ -99,7 +99,7 @@ const ExperienceCard = ({
         </div>
 
         {/* Date - visible on small screens */}
-        <span className="flex items-center font-semibold text-lg w-1/6">
+        <span className="flex items-center justify-end font-semibold text-lg w-1/6">
           {experience.startDate} - {experience.endDate}
         </span>
       </div>

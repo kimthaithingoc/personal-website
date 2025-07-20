@@ -12,8 +12,8 @@ export const experiences: IExperience[] = [
   {
     id: "cnpt-fullstack",
     code: "CNPT",
-    startDate: "2025-07-18",
-    endDate: "2025-06-01",
+    startDate: "2025-07",
+    endDate: "2025-06",
     position: "Full-stack Intern",
     company: "CNPT",
     location: "Da Nang City, VietNam",
