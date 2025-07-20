@@ -253,8 +253,10 @@
       "company": "FPT Software",
       "location": "Ho Chi Minh City, VietNam",
       "description": [
-        "Graduated with a perfect score (10/10).",
+        "Led an 8-member Agile/Scrum team using Jira for efficient task planning and progress tracking; developed features for student management, scoring, and reservation.",
+        "Built CI/CD pipeline by GitLab CI with lint, Vitest checks pre-merge to ensure code quality.",
         "Led an 8-member team following Agile/Scrum methodologies using Jira, ensuring effective planning, progress tracking, and smooth reporting.",
+        "Achieved 73% overall test coverage (statements/lines) with Vitest, and implemented Cypress for end-to-end testing.",
         "Served as class representative, actively led the class in participating in company activities and achieved multiple accomplishments."
       ]
     },

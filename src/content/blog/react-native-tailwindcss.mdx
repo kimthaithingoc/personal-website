@@ -1,0 +1,340 @@
+export const metadata = {
+  title:
+    "How to Set Up NativeWind with Expo React Native — Theme Switcher, Themed Components & Custom Fonts",
+  publishDate: "2025-07-12T07:00:00Z",
+  description:
+    "Step-by-step guide to installing NativeWind v4 in an Expo React Native project with dark mode support, Tailwind config, and custom Themed components.",
+  category: "Technology",
+  thumbnail: "/images/posts/react-native-tailwindcss.png",
+  tags: [
+    "NativeWind",
+    "React Native",
+    "Expo",
+    "TailwindCSS",
+    "Dark Mode",
+    "Theming",
+    "Mobile UI",
+    "TypeScript",
+    "Themed Components",
+    "NativeWind v4",
+    "Expo 53",
+    "Font",
+  ],
+};
+
+# 🌗 How to Set Up NativeWind with Expo React Native — Dark Mode + Themed Components + Custom Fonts
+
+If you're building a React Native app with Expo and want to add **Tailwind-like styling with theme support**, **NativeWind v4** is a perfect fit. It supports dark mode, custom fonts, and allows you to build design systems using Tailwind classes — right in your mobile app.
+
+This guide walks you through how to:
+
+- Set up **NativeWind v4** in Expo 53 (React Native)
+- Create a **dark/light theme switcher** with TailwindCSS
+- Integrate custom fonts with TailwindCSS
+- Build custom components like `ThemedText`, `ThemedView`, and `ThemedButton`
+
+> 💡 **Tip:** If you're using an older version of Expo (prior to SDK 53), consider using **NativeWind v2** instead. NativeWind v4 requires Expo SDK 53 or later for full compatibility.
+
+---
+
+## ✅ Why Use NativeWind?
+
+- Tailwind-like syntax for styling in React Native.
+- Supports dark mode and system themes.
+- Works perfectly with **Expo** and **React Native Reanimated v3**.
+- Helps you build consistent, scalable UI components.
+
+---
+
+## 1. Install Dependencies
+
+Install NativeWind and required libraries:
+
+```bash
+npm install nativewind react-native-reanimated@~3.17.4 react-native-safe-area-context@5.4.0
+npm install --save-dev tailwindcss@^3.4.17 prettier-plugin-tailwindcss@^0.5.11
+```
+
+> 📌 Note: You can use the latest versions of these packages, but the versions listed above are known to work perfectly with NativeWind v4 and Expo SDK 53, providing maximum compatibility and stability during setup.
+
+---
+
+## 2. Configure TailwindCSS
+
+Create or edit `tailwind.config.js`:
+
+```js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./App.tsx",
+    "./src/components/**/*.{js,jsx,ts,tsx}",
+    "./src/app/**/*.{js,jsx,ts,tsx}",
+    // Adjust these paths based on your project structure.
+    // This example assumes all source code is under the `src` directory.
+  ],
+  darkMode: "class",
+  presets: [require("nativewind/preset")],
+  theme: {
+    extend: {
+      // Setup font if you want to use custom font in React Native
+      fontFamily: {
+        sans: ["Montserrat-Regular"],
+        thin: ["Montserrat-Thin"],
+        extralight: ["Montserrat-ExtraLight"],
+        light: ["Montserrat-Light"],
+        medium: ["Montserrat-Medium"],
+        semibold: ["Montserrat-SemiBold"],
+        bold: ["Montserrat-Bold"],
+        extrabold: ["Montserrat-ExtraBold"],
+        black: ["Montserrat-Black"],
+        italic: ["Montserrat-Italic"],
+      },
+      colors: {
+        background: "hsl(var(--background) / <alpha-value>)",
+        foreground: "hsl(var(--foreground) / <alpha-value>)",
+        muted: "hsl(var(--muted) / <alpha-value>)",
+        "muted-foreground": "hsl(var(--muted-foreground) / <alpha-value>)",
+        popover: "hsl(var(--popover) / <alpha-value>)",
+        "popover-foreground": "hsl(var(--popover-foreground) / <alpha-value>)",
+        card: "hsl(var(--card) / <alpha-value>)",
+        "card-foreground": "hsl(var(--card-foreground) / <alpha-value>)",
+        border: "hsl(var(--border) / <alpha-value>)",
+        input: "hsl(var(--input) / <alpha-value>)",
+        primary: "hsl(var(--primary) / <alpha-value>)",
+        "primary-foreground": "hsl(var(--primary-foreground) / <alpha-value>)",
+        secondary: "hsl(var(--secondary) / <alpha-value>)",
+        "secondary-foreground":
+          "hsl(var(--secondary-foreground) / <alpha-value>)",
+        accent: "hsl(var(--accent) / <alpha-value>)",
+        "accent-foreground": "hsl(var(--accent-foreground) / <alpha-value>)",
+        destructive: "hsl(var(--destructive) / <alpha-value>)",
+        "destructive-foreground":
+          "hsl(var(--destructive-foreground) / <alpha-value>)",
+        ring: "hsl(var(--ring) / <alpha-value>)",
+        "chart-1": "hsl(var(--chart-1) / <alpha-value>)",
+        "chart-2": "hsl(var(--chart-2) / <alpha-value>)",
+        "chart-3": "hsl(var(--chart-3) / <alpha-value>)",
+        "chart-4": "hsl(var(--chart-4) / <alpha-value>)",
+        "chart-5": "hsl(var(--chart-5) / <alpha-value>)",
+      },
+    },
+  },
+};
+```
+
+---
+
+## 3. Create a Global Stylesheet
+
+Create a file `styles/global.css` and define your color variables:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 13.33%;
+    --primary: 150 50% 45%;
+    --primary-foreground: 0 0% 100%;
+    /* ... other light theme colors */
+  }
+
+  // for dark theme
+  .dark:root {
+    --background: 0 0% 6.67%;
+    --foreground: 0 0% 93.33%;
+    --primary: 150.24 50% 40%;
+    --primary-foreground: 0 0% 93.33%;
+    /* ... other dark theme colors */
+  }
+}
+```
+
+Then import it in your root layout file:
+
+```ts
+import "@/styles/global.css";
+```
+
+---
+
+## 4. Configure Babel
+
+Update your `babel.config.js`:
+
+```js
+module.exports = function (api) {
+  api.cache(true);
+  return {
+    presets: [
+      ["babel-preset-expo", { jsxImportSource: "nativewind" }],
+      "nativewind/babel",
+    ],
+  };
+};
+```
+
+---
+
+## 5. Configure Metro
+
+Create or update `metro.config.js`:
+
+```js
+const { getDefaultConfig } = require("expo/metro-config");
+const { withNativeWind } = require("nativewind/metro");
+
+const config = getDefaultConfig(__dirname);
+
+module.exports = withNativeWind(config, {
+  input: "./global.css",
+});
+```
+
+---
+
+## 6. Add NativeWind Type Declarations
+
+Create a file `nativewind-env.d.ts` in your root directory:
+
+```ts
+/// <reference types="nativewind/types" />
+```
+
+---
+
+## 7. Load Custom Fonts
+
+Download Montserrat fonts (on Google Fonts, etc) and place them in `assets/fonts/`, then load them in your layout:
+
+```ts
+const [fontsLoaded] = useFonts({
+  "Montserrat-Regular": require("@/assets/fonts/Montserrat-Regular.ttf"),
+  "Montserrat-Bold": require("@/assets/fonts/Montserrat-Bold.ttf"),
+  // ... other weights
+});
+```
+
+---
+
+## 8. Create Theme Switcher Component
+
+File: `components/ThemeSwitcher.tsx`
+
+```tsx
+import { useColorScheme } from "nativewind";
+import { Switch } from "react-native";
+import { ThemedText } from "./ThemedText";
+
+export default function ThemeSwitcher() {
+  const { colorScheme, toggleColorScheme } = useColorScheme();
+
+  return (
+    <>
+      <Switch
+        className="text-primary"
+        value={colorScheme === "dark"}
+        onValueChange={toggleColorScheme}
+      />
+      <ThemedText className="text-foreground">Dark mode</ThemedText>
+    </>
+  );
+}
+```
+
+---
+
+## 9. Create or update `ThemedText` and `ThemedView` Components
+
+### `components/ThemedText.tsx`
+
+```tsx
+import React from "react";
+import { Text, TextProps } from "react-native";
+
+export type ThemedTextProps = TextProps & {
+  color?: string;
+  type?: "default" | "title" | "defaultSemiBold" | "subtitle" | "link";
+};
+
+export function ThemedText({
+  style,
+  color,
+  type = "default",
+  className,
+  ...rest
+}: ThemedTextProps) {
+  const typeClass = {
+    default: "text-base leading-6",
+    defaultSemiBold: "text-base leading-6 font-semibold",
+    title: "text-4xl font-bold leading-10",
+    subtitle: "text-xl font-bold",
+    link: "text-base leading-7 text-sky-600",
+  }[type];
+
+  const combinedClassName = [
+    typeClass,
+    color ? `text-${color}` : "text-foreground",
+    className,
+  ].join(" ");
+
+  return <Text className={combinedClassName} style={style} {...rest} />;
+}
+```
+
+### `components/ThemedView.tsx`
+
+```tsx
+import { View, ViewProps } from "react-native";
+
+export type ThemedViewProps = ViewProps & {
+  color?: string;
+};
+
+export function ThemedView({
+  style,
+  color,
+  className,
+  ...otherProps
+}: ThemedViewProps) {
+  return (
+    <View
+      className={`${className} ${color ? `bg-${color}` : "bg-background"}`}
+      style={style}
+      {...otherProps}
+    />
+  );
+}
+```
+
+---
+
+## 🔄 How to Use Themed Components
+
+```tsx
+<ThemedText color="muted-foreground" className="text-center">
+  Welcome to the app!
+</ThemedText>
+
+<ThemedView className="p-4 rounded-lg">
+  <ThemedText type="title">Hello World</ThemedText>
+</ThemedView>
+```
+
+---
+
+## 🌙 Summary
+
+You’ve now:
+
+✅ Installed and configured **NativeWind v4** in Expo
+✅ Built a **dark mode toggle switch**
+✅ Integrate custom fonts with TailwindCSS
+✅ Created reusable components like `ThemedText` and `ThemedView`
+✅ Added a **global design system** using Tailwind
+
+This setup allows you to move fast while maintaining a consistent and theme-aware design across your app.

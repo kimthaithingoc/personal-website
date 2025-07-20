@@ -1,0 +1,242 @@
+export const metadata = {
+  title: "How to Use Cypress in a React + TypeScript Project",
+  publishDate: "2025-07-11T07:00:00Z",
+  description:
+    "Learn how to set up Cypress for end-to-end testing in a React and TypeScript project. Includes complete configuration, folder structure, TypeScript and ESLint setup, and best practices.",
+  category: "Technology",
+  thumbnail: "/images/posts/cypress-react-typescript-setup.png",
+  tags: [
+    "Cypress",
+    "React",
+    "TypeScript",
+    "End-to-End Testing",
+    "Frontend Testing",
+    "JavaScript Testing",
+    "Testing Tools",
+    "Automation",
+  ],
+};
+
+# ✅ How to Use Cypress in a React + TypeScript Project
+
+**Cypress** is a powerful end-to-end (E2E) testing framework that helps ensure your application behaves as expected from a user’s perspective. Integrating Cypress into a React + TypeScript project can greatly improve confidence in your codebase, reduce bugs, and automate UI testing efficiently.
+
+---
+
+## 🚀 Benefits of Using Cypress for React Applications
+
+- Test user interactions in a real browser environment.
+- Easy to debug with time-travel snapshots and browser dev tools.
+- Built-in support for modern frameworks like React.
+- Seamless CI/CD integration (e.g., GitHub Actions, GitLab CI).
+- Excellent TypeScript support.
+
+---
+
+## 1. Install Cypress
+
+Run the following command in your project root:
+
+```bash
+npm install cypress --save-dev
+```
+
+Then, to open the Cypress Test Runner UI:
+
+```bash
+npx cypress open
+```
+
+---
+
+## 2. Cypress Configuration (`cypress.config.ts`)
+
+Create or modify the `cypress.config.ts` file in your project root:
+
+```ts
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { defineConfig } from "cypress";
+
+export default defineConfig({
+  projectId: "5dmi8n", // Optional: used if you connect to Cypress Cloud
+  e2e: {
+    baseUrl: "http://localhost:5173/", // Adjust to match your local dev server
+  },
+});
+```
+
+### 📝 Why this matters:
+
+- `baseUrl` lets you avoid repeating the full URL (`cy.visit("/")` instead of `cy.visit("http://localhost:5173/")`).
+- `projectId` is optional and only needed if using the Cypress Dashboard.
+
+---
+
+## 3. TypeScript & ESLint Configuration
+
+Cypress supports TypeScript out of the box, but you’ll need to configure ESLint and TypeScript properly so the Cypress files are linted correctly and don’t break your build.
+
+### ✅ ESLint: `.eslintrc.cjs`
+
+```js
+module.exports = {
+  overrides: [
+    {
+      // Testing Library for React unit/integration tests
+      files: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+      extends: ["plugin:testing-library/react"],
+    },
+    {
+      // Cypress E2E files
+      files: ["cypress/**/*.ts", "cypress.config.ts"],
+      parserOptions: {
+        project: "./cypress/tsconfig.json",
+      },
+    },
+  ],
+};
+```
+
+### 🔍 Explanation:
+
+- The first override is for unit/integration tests using Testing Library.
+- The second override is for Cypress files — this tells ESLint to lint Cypress TypeScript files using their own `tsconfig`.
+
+### ✅ TypeScript: `tsconfig.json`
+
+Make sure Cypress is excluded from your main TS project (to avoid type conflicts):
+
+```json
+{
+  "compilerOptions": {
+    "types": ["cypress", "node"]
+  },
+  "exclude": ["cypress", "cypress.config.ts"]
+}
+```
+
+Then, create a `cypress/tsconfig.json`:
+
+```json
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "types": ["cypress"]
+  },
+  "include": ["**/*.ts"]
+}
+```
+
+### 🔍 Explanation:
+
+- Cypress uses global types that could conflict with your main app if not isolated.
+- By using a separate `tsconfig.json` under `/cypress`, you scope those types only to test files.
+
+---
+
+## 4. Cypress Folder Structure
+
+After running `npx cypress open`, Cypress will generate this structure:
+
+```
+cypress/
+├── downloads/        # Files downloaded during tests
+├── e2e/              # Place your test cases here
+│   └── students/
+│       └── classes_management.cy.ts
+├── fixtures/         # Mock data for tests
+│   └── example.json
+├── support/          # Custom commands and global config
+```
+
+### You can organize tests by domain/module for clarity.
+
+---
+
+## 5. Example Test: Form Submission in Class Management
+
+### File: `cypress/e2e/students/classes_management.cy.ts`
+
+```ts
+// Optional: login before each test
+beforeEach(() => {
+  cy.login("Admin12", "Admin@123"); // Custom command from support/commands.ts
+});
+
+describe("Classes Management Component", () => {
+  it("successfully submits form", () => {
+    const classDetail = "HCM24_01";
+    cy.visit(`/classes/${classDetail}`);
+
+    cy.contains("button", "Send email").click();
+
+    cy.get("#RemindForm_EmailType").click({ force: true });
+    cy.get(".ant-select-dropdown").should("be.visible");
+    cy.contains(".ant-select-item-option", "Inform").click({ force: true });
+
+    cy.get("#RemindForm_EmailTemplateId").click({ force: true });
+    cy.contains(".ant-select-item-option", "Title Email Template").click({
+      force: true,
+    });
+
+    cy.contains("button", "Preview").click();
+    cy.contains("button", "Back").click();
+    cy.get(".btn-send-btn").click();
+
+    cy.wait(5000); // wait for backend response
+    cy.get(".Toastify__toast--success").should("be.visible");
+  });
+});
+```
+
+---
+
+## 6. Add Cypress Script to `package.json`
+
+```json
+"scripts": {
+  "cypress:open": "cypress open",
+  "cypress:run": "cypress run"
+}
+```
+
+### 🔍 Explanation:
+
+- `cypress:open` launches the interactive test runner UI.
+- `cypress:run` runs tests headlessly (useful in CI/CD pipelines).
+
+---
+
+## 7. Running Cypress
+
+Start your local React/Next.js server:
+
+```bash
+npm run dev
+```
+
+Then open Cypress:
+
+```bash
+npm run cypress:open
+```
+
+Select the `.cy.ts` test file to run it in your browser.
+
+---
+
+## 🔧 Optional Tips and Best Practices
+
+- ✅ Use `cy.intercept()` to stub or spy on API calls.
+- ✅ Write reusable custom commands in `cypress/support/commands.ts`.
+- ✅ Prefer `data-testid` attributes over class or ID selectors.
+- ✅ Use `cy.wait()` only as a last resort; prefer asserting visibility or XHR completion.
+- ✅ Integrate Cypress into CI pipelines for continuous quality checks.
+
+---
+
+## ✅ Summary
+
+Using **Cypress with React + TypeScript** makes E2E testing simple, reliable, and maintainable. By properly setting up configuration files, separating TypeScript contexts, and organizing test files clearly, you’ll be able to create robust tests that simulate real user behavior.
+
+> Cypress gives you confidence in every deploy, reduces regressions, and catches bugs **before** they reach production.

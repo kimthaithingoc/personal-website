@@ -253,9 +253,11 @@
       "company": "FPT Software",
       "location": "TP. Hồ Chí Minh, Việt Nam",
       "description": [
-        "Tốt nghiệp với điểm tuyệt đối (10/10).",
-        "Dẫn dắt nhóm 8 thành viên theo phương pháp Agile/Scrum bằng công cụ Jira, đảm bảo kế hoạch hiệu quả, theo dõi tiến độ và báo cáo suôn sẻ.",
-        "Là lớp trưởng, tích cực dẫn dắt lớp tham gia các hoạt động công ty và đạt được nhiều thành tích."
+        "Dẫn dắt nhóm Agile/Scrum gồm 8 thành viên, sử dụng Jira để lập kế hoạch công việc và theo dõi tiến độ hiệu quả; phát triển các tính năng quản lý sinh viên, chấm điểm và đặt chỗ.",
+        "Xây dựng pipeline CI/CD bằng GitLab CI với các bước kiểm tra lint và Vitest trước khi merge để đảm bảo chất lượng mã nguồn.",
+        "Dẫn dắt nhóm 8 thành viên theo phương pháp Agile/Scrum, sử dụng Jira để đảm bảo lập kế hoạch hiệu quả, theo dõi tiến độ và báo cáo suôn sẻ.",
+        "Đạt được 73% độ bao phủ kiểm thử tổng thể (theo dòng/lệnh) với Vitest, và triển khai Cypress để kiểm thử end-to-end.",
+        "Đảm nhận vai trò lớp trưởng, tích cực dẫn dắt lớp tham gia các hoạt động của công ty và đạt được nhiều thành tích."
       ]
     },
 

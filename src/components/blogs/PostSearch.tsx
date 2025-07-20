@@ -27,7 +27,7 @@ export function PostSearch({ onSearch, initialValue = "" }: PostSearchProps) {
   };
 
   return (
-    <div className="flex items-center gap-1 border rounded-full px-3">
+    <div className="flex items-center gap-1 border rounded-full px-3 dark:bg-input">
       <Search className="w-4 h-4" />
       <Input
         value={keyword}
