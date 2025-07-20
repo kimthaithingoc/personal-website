@@ -255,6 +255,15 @@
         "带领一个8人团队，采用Agile/Scrum方法并使用Jira工具，有效规划、跟踪进度并顺利汇报。",
         "担任班级代表，积极带领同学参与公司活动，并取得多项成就。"
       ]
+    },
+    "CNPT": {
+      "position": "全栈实习生",
+      "company": "CNPT",
+      "location": "越南岘港市",
+      "description": [
+        "使用 React、TypeScript、NestJS、MySQL 和 RESTful API 开发了一个全栈刑事调查系统；利用 React Query 和 Redux Toolkit 构建了强大的报案与物证管理功能。",
+        "与一个由13名成员组成的敏捷团队协作，设计数据库，确保符合业务分析师的需求，并顺利将功能交付给 QA 测试团队。"
+      ]
     }
   },
   "Date": {

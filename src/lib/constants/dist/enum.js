@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-exports.ResourceType = exports.UrlType = exports.Role = exports.OtherTech = exports.DevOpsTech = exports.DatabaseTech = exports.ThirdPartyTech = exports.MobileTech = exports.BackendTech = exports.TechStackCategory = exports.FrontendTech = exports.ProjectPlatform = exports.ProjectCategory = void 0;
+exports.ResourceType = exports.UrlType = exports.Role = exports.OtherTech = exports.DevOpsTech = exports.DatabaseTech = exports.ThirdPartyTech = exports.MobileTech = exports.BackendTech = exports.TechStackCategory = exports.QATech = exports.FrontendTech = exports.ProjectPlatform = exports.ProjectCategory = void 0;
 var ProjectCategory;
 (function (ProjectCategory) {
     ProjectCategory["SaaS"] = "SaaS";
@@ -49,6 +49,11 @@ var FrontendTech;
     FrontendTech["ReactQuery"] = "React Query";
     FrontendTech["ShadCN"] = "ShadCN UI";
 })(FrontendTech = exports.FrontendTech || (exports.FrontendTech = {}));
+var QATech;
+(function (QATech) {
+    QATech["Vitest"] = "Vitest";
+    QATech["Cypress"] = "Cypress";
+})(QATech = exports.QATech || (exports.QATech = {}));
 var TechStackCategory;
 (function (TechStackCategory) {
     TechStackCategory["Frontend"] = "Frontend";

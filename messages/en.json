@@ -257,6 +257,15 @@
         "Led an 8-member team following Agile/Scrum methodologies using Jira, ensuring effective planning, progress tracking, and smooth reporting.",
         "Served as class representative, actively led the class in participating in company activities and achieved multiple accomplishments."
       ]
+    },
+    "CNPT": {
+      "position": "Full-stack Intern",
+      "company": "CNPT",
+      "location": "Da Nang City, VietNam",
+      "description": [
+        "Developed a full-stack criminal investigation system using React, TypeScript, NestJS, MySQL, and Restful APIs, robust features for report and physical evidence management using React Query and Redux Toolkit.",
+        "Collaborated across a 13-member Agile team to design databases, align with business analyst requirements, and ensure feature readiness and handoff for QA."
+      ]
     }
   },
   "Date": {

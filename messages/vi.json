@@ -257,6 +257,16 @@
         "Dẫn dắt nhóm 8 thành viên theo phương pháp Agile/Scrum bằng công cụ Jira, đảm bảo kế hoạch hiệu quả, theo dõi tiến độ và báo cáo suôn sẻ.",
         "Là lớp trưởng, tích cực dẫn dắt lớp tham gia các hoạt động công ty và đạt được nhiều thành tích."
       ]
+    },
+
+    "CNPT": {
+      "position": "Thực tập sinh Full-stack",
+      "company": "CNPT",
+      "location": "Thành phố Đà Nẵng, Việt Nam",
+      "description": [
+        "Phát triển hệ thống điều tra tội phạm full-stack sử dụng React, TypeScript, NestJS, MySQL và Restful APIs; xây dựng các tính năng mạnh mẽ để quản lý báo cáo và vật chứng bằng React Query và Redux Toolkit.",
+        "Hợp tác cùng nhóm Agile gồm 13 thành viên để thiết kế cơ sở dữ liệu, đảm bảo yêu cầu từ chuyên viên phân tích nghiệp vụ và bàn giao tính năng cho đội kiểm thử QA."
+      ]
     }
   },
   "Date": {

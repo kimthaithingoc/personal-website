@@ -1,5 +1,6 @@
 export const metadata = {
-  title: "Firebase Phone Authentication Setup in a React Native App with Expo",
+  title:
+    "Set Up Firebase Phone Verification in a React Native App with Expo (Without Firebase Auto Login)",
   publishDate: "2025-07-10T07:00:00Z",
   description:
     "A complete step-by-step guide to implementing Firebase phone authentication (OTP verification) in a React Native app using Expo. Learn how to manage OTP sessions, avoid auto-retrieval and auto-login issues with Firebase, and ensure a secure phone number verification process.",
@@ -16,10 +17,13 @@ export const metadata = {
     "Expo Firebase Setup",
     "React Native OTP Input",
     "Secure Mobile Authentication",
+    "Eas",
+    "Development",
+    "Production",
   ],
 };
 
-# 📱 Firebase Phone Authentication Setup in a React Native App with Expo
+# 📱 Set Up Firebase Phone Verification in a React Native App with Expo (Without Firebase Auto Login)
 
 This guide outlines the steps to implement **Firebase phone authentication (OTP verification)** in a **React Native** application using **Expo**. The process includes:
 
@@ -33,11 +37,11 @@ This guide outlines the steps to implement **Firebase phone authentication (OTP 
 ## 1. Install Dependencies
 
 Install the required Firebase and other dependencies:
+Since I navigate between two screens, I use AsyncStorage to persist the phone number and avoid losing data during navigation.
 
 ```bash
 npm install @react-native-firebase/app@^22.2.1 @react-native-firebase/auth@^22.2.1
-npm @react-native-async-storage/async-storage@2.1.2 zustand@^5.0.6
-
+npm install @react-native-async-storage/async-storage@2.1.2
 ```
 
 ---
@@ -666,7 +670,9 @@ export default {
 
 ### 3.4 Build the App
 
-Build Android app for production:
+**Build Android app for production (or development)**:
+
+If you're using EAS, make sure to rebuild the app whenever you install native dependencies (e.g., Firebase, React Native modules), as they require a new native build to take effect.
 
 ```bash
 eas build -p android --profile production

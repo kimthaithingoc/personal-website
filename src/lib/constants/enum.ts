@@ -46,6 +46,11 @@ export enum FrontendTech {
   ShadCN = "ShadCN UI",
 }
 
+export enum QATech {
+  Vitest = "Vitest",
+  Cypress = "Cypress",
+}
+
 export enum TechStackCategory {
   Frontend = "Frontend",
   Backend = "Backend",
