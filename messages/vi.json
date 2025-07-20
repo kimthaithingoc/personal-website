@@ -45,10 +45,10 @@
     "connect": "Kết nối"
   },
   "Hero": {
-    "description": "Tôi thiết kế các ứng dụng web sạch sẽ, hiện đại, lấy người dùng làm trung tâm. Tôi yêu thích việc biến ý tưởng thành giải pháp thực tế — và trông thật đẹp mắt.",
+    "description": "Mình thích tạo ra ứng dụng và web hiện đại, gọn gàng và ưu tiên trải nghiệm người dùng tốt. Mình thích biến ý tưởng thành giải pháp thực tế – trông vừa bling bling, vừa giúp cuộc sống tiện lợi hơn.",
     "jobTitle": "Kỹ sư phần mềm",
-    "hi": "Chào, tôi là",
-    "i": "Tôi là "
+    "hi": "Hi, mình là",
+    "i": "Mình là "
   },
   "Button": {
     "viewPortfolio": "Xem Dự Án",
