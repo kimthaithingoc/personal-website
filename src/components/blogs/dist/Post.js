@@ -131,7 +131,7 @@ var Post = function () {
                 react_1["default"].createElement(PostFilter_1["default"], { setFilters: setFilters, initialFilters: filters === null || filters === void 0 ? void 0 : filters.category })),
             !isLoading && total > 0 && (react_1["default"].createElement(react_1["default"].Fragment, null,
                 react_1["default"].createElement(PostContainer_1["default"], { posts: posts }),
-                react_1["default"].createElement("div", { className: "mt-auto mb-6" },
+                react_1["default"].createElement("div", { className: "mt-auto mb-4" },
                     react_1["default"].createElement(PostPagination_1["default"], { page: page, hasNextPage: hasNextPage, hasPrevPage: hasPrevPage, totalPages: totalPages, createQueryString: createQueryString, pathname: pathname })))),
             !isLoading && total === 0 && (react_1["default"].createElement("div", { className: "my-auto h-full" },
                 react_1["default"].createElement(Empty_1["default"], { item: "posts" }))))));

@@ -8,6 +8,7 @@ import { socialLinks } from "@/lib/config";
 
 const FloatButton = () => {
   const { theme } = useTheme();
+  console.log(theme);
 
   return (
     <div
@@ -19,13 +20,13 @@ const FloatButton = () => {
           const Icon = Icons[link.icon as keyof typeof Icons];
           return (
             <Link
-              href={link.href}
+              href={link.name === "Email" ? "mailto:" + link.href : link.href}
               key={link.name}
               className="rounded-full shadow-inner p-2.5 bg-primary hover:bg-primary/80"
             >
               <Icon
-                color={theme === "dark" ? "black" : "white"}
-                className="w-4 h-4  dark:text-primary-foreground"
+                color={theme === "light" ? "white" : "black"}
+                className="w-4 h-4"
               />
             </Link>
           );

@@ -34,7 +34,7 @@ var ExperienceCard = function (_a) {
             transition: "opacity 0.5s ease, transform 0.5s ease " + index * 0.1 + "s"
         } },
         react_1["default"].createElement("div", { className: "flex justify-between items-center gap-2" },
-            react_1["default"].createElement("div", { className: "transition-all space-y-3 w-4/5" },
+            react_1["default"].createElement("div", { className: "transition-all space-y-3 w-5/6" },
                 react_1["default"].createElement("div", { className: "flex items-center gap-3" },
                     react_1["default"].createElement("h3", { className: "text-xl font-semibold" }, experience.position),
                     react_1["default"].createElement("div", { className: "flex items-center gap-3" },

@@ -99,7 +99,7 @@ const Post = () => {
         {!isLoading && total > 0 && (
           <>
             <PostContainer posts={posts} />
-            <div className="mt-auto mb-6">
+            <div className="mt-auto mb-4">
               <PostPagination
                 page={page}
                 hasNextPage={hasNextPage}

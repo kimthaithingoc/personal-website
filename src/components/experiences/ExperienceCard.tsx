@@ -58,7 +58,7 @@ const ExperienceCard = ({
     >
       {/* Content */}
       <div className="flex justify-between items-center gap-2">
-        <div className="transition-all space-y-3 w-4/5">
+        <div className="transition-all space-y-3 w-5/6">
           <div className="flex items-center gap-3">
             <h3 className="text-xl font-semibold">{experience.position}</h3>
             <div className="flex items-center gap-3">
