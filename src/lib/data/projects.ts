@@ -193,7 +193,7 @@ export const projects: IProject[] = [
       },
       {
         type: ResourceType.Document,
-        url: "https://drive.google.com/drive/folders/1tRCr4B5b-2jz4DUcdmzjZdtpkiTIobt3?usp=sharing",
+        url: "https://drive.google.com/drive/folders/1Ucx51KcE5xCm5s8IhrxLQcbR-Ys_6hOO?usp=sharing",
       },
       {
         type: ResourceType.Postman,
@@ -202,8 +202,8 @@ export const projects: IProject[] = [
     ],
     videoDemo: "https://www.youtube.com/embed/mRRYz1J9M-Y",
     videoThumbnail: "/images/portfolio/project/cimus/Demo-Cover.jpg",
-    startTime: "2025-06",
-    endTime: "2025-07",
+    startTime: "2025-06-01",
+    endTime: "2025-07-18",
     contribution: {
       percentage: 10,
       role: [Role.FrontendDeveloper, Role.UIUXDesigner],
