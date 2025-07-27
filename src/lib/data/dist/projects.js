@@ -171,10 +171,6 @@ exports.projects = [
         category: [enum_1.ProjectCategory.InternalTool],
         resources: [
             {
-                type: enum_1.ResourceType.Github,
-                url: "https://github.com/ngockim109/crime_investigation_management_system"
-            },
-            {
                 type: enum_1.ResourceType.Document,
                 url: "https://drive.google.com/drive/folders/1Ucx51KcE5xCm5s8IhrxLQcbR-Ys_6hOO?usp=sharing"
             },
@@ -360,7 +356,6 @@ exports.projects = [
                 type: enum_1.ResourceType.Demo,
                 url: "https://student-management-system-git-main-hnam-truongs-projects.vercel.app"
             },
-            { type: enum_1.ResourceType.Github, url: "https://github.com/ngockim109/fams" },
             {
                 type: enum_1.ResourceType.Document,
                 url: "https://drive.google.com/drive/folders/1ZbFRJq9cDW0_sQOVn35aGzi-epHJLir9?usp=sharing"

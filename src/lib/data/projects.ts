@@ -188,10 +188,6 @@ export const projects: IProject[] = [
     category: [ProjectCategory.InternalTool],
     resources: [
       {
-        type: ResourceType.Github,
-        url: "https://github.com/ngockim109/crime_investigation_management_system",
-      },
-      {
         type: ResourceType.Document,
         url: "https://drive.google.com/drive/folders/1Ucx51KcE5xCm5s8IhrxLQcbR-Ys_6hOO?usp=sharing",
       },
@@ -386,7 +382,6 @@ export const projects: IProject[] = [
         type: ResourceType.Demo,
         url: "https://student-management-system-git-main-hnam-truongs-projects.vercel.app",
       },
-      { type: ResourceType.Github, url: "https://github.com/ngockim109/fams" },
       {
         type: ResourceType.Document,
         url: "https://drive.google.com/drive/folders/1ZbFRJq9cDW0_sQOVn35aGzi-epHJLir9?usp=sharing",
