@@ -179,7 +179,6 @@ exports.projects = [
                 url: "https://mockprojectnhom6.postman.co/workspace/MockProjectNhom6's-Workspace~9f7d878b-b704-449b-8e02-a746bc627077/collection/46454979-e0b46629-f907-4b7f-99fc-685e3bbf5d34?action=share&creator=46454979"
             },
         ],
-        videoDemo: "https://www.youtube.com/embed/mRRYz1J9M-Y",
         videoThumbnail: "/images/portfolio/project/cimus/Demo-Cover.jpg",
         startTime: "2025-06-01",
         endTime: "2025-07-18",
